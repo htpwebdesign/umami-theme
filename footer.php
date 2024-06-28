@@ -12,6 +12,16 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
+		<nav class="footer-navigation">
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'footer-menu',
+					'menu_id'        => 'footer-menu',
+				)
+			);
+			?>
+		</nav>
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'umami-theme' ) ); ?>">
 				<?php
