@@ -34,7 +34,7 @@ function urb_register_cpt() {
 	$args = array(
 		'label'                 => __( 'Testimonial', 'text_domain' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'thumbnail' ),
+		'supports'              => array( 'title', 'editor' ),
 		'taxonomies'            => array( 'category', 'post_tag' ),
 		'hierarchical'          => false,
 		'public'                => true,
