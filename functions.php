@@ -187,3 +187,29 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+// create shortcode for displaying testimonials
+add_shortcode('testimonial', 'urb_testimonial_shortcode');
+
+function urb_testimonial_shortcode() {
+	$args = array(
+		'post_type' => 'urb-testimonial',
+		'posts_per_page' => 1,
+		'orderby' => 'rand'
+	);
+
+	$query = new WP_Query($args);
+
+	if ($query->have_posts()) {
+		while ($query->have_posts()) {
+			$query->the_post();
+			
+			$output = "<h2>" . get_the_title() . "</h2>";
+			$output .= "<blockquote>" . get_the_content() . "</blockquote>";
+		}
+
+		wp_reset_postdata();
+	}
+
+	return $output;
+}
