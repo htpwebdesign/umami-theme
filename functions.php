@@ -151,7 +151,7 @@ function umami_theme_scripts() {
 add_action( 'wp_enqueue_scripts', 'umami_theme_scripts' );
 
 function enqueue_jquery() {
-    wp_enqueue_script('jquery');
+    wp_enqueue_script('jquery'); // Enqueue jQuery from WordPress core
 }
 add_action('wp_enqueue_scripts', 'enqueue_jquery');
 
