@@ -150,6 +150,11 @@ function umami_theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'umami_theme_scripts' );
 
+function enqueue_jquery() {
+    wp_enqueue_script('jquery');
+}
+add_action('wp_enqueue_scripts', 'enqueue_jquery');
+
 /**
  * Implement the Custom Header feature.
  */
