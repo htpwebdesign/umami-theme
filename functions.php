@@ -176,6 +176,11 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * Load CPT and Taxonomy files.
+ */
+require get_template_directory() . '/inc/cpt-taxonomy.php';
+
+/**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
@@ -187,4 +192,30 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  */
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
+}
+
+// create shortcode for displaying testimonials
+add_shortcode('testimonial', 'urb_testimonial_shortcode');
+
+function urb_testimonial_shortcode() {
+	$args = array(
+		'post_type' => 'urb-testimonial',
+		'posts_per_page' => 1,
+		'orderby' => 'rand'
+	);
+
+	$query = new WP_Query($args);
+
+	if ($query->have_posts()) {
+		while ($query->have_posts()) {
+			$query->the_post();
+			
+			$output = "<h2>" . get_the_title() . "</h2>";
+			$output .= "<blockquote>" . get_the_content() . "</blockquote>";
+		}
+
+		wp_reset_postdata();
+	}
+
+	return $output;
 }
