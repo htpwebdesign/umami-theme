@@ -232,7 +232,7 @@ remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_pr
 // Change add to cart text on single product page
 add_filter( 'woocommerce_product_single_add_to_cart_text', 'woocommerce_add_to_cart_button_text_single' ); 
 function woocommerce_add_to_cart_button_text_single() {
-    return __( 'View Product Details', 'woocommerce' ); 
+    return __( 'Add to Cart', 'woocommerce' ); 
 }
 
 // Change add to cart text on product archives page
@@ -241,6 +241,7 @@ function woocommerce_add_to_cart_button_text_archives() {
     return __( 'View Product Details', 'woocommerce' );
 }
 
+// change the text of the "Select options" button on the product archives page
 add_filter( 'gettext', 'change_some_woocommerce_strings', 10, 3 );
 function change_some_woocommerce_strings( $translate_text, $original_text, $domain ) {
     global $woocommerce_loop;
