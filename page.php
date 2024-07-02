@@ -29,29 +29,33 @@ get_header();
 
 						the_row();
 
+						?>
+						<article>
+						<?php
 						if (get_sub_field("location_name")) {
-							$location_name = sanitize_text_field(get_sub_field("location_name"));
+							$location_name = get_sub_field("location_name");
 							echo "<p>" . esc_html($location_name) . "</p>";
 						}
 
 						if (get_sub_field("address")) {
-							$address = sanitize_text_field(get_sub_field("address"));
+							$address = get_sub_field("address");
 							echo "<p>" . esc_html($address) . "</p>";
 						}
 
-						
-
 						if (get_sub_field("phone")) {
-							$phone = sanitize_text_field(get_sub_field("phone"));
+							$phone = get_sub_field("phone");
 							echo "<p>" . esc_html($phone) . "</p>";
 						}
 
 						if (get_sub_field("email")) {
-							$email = sanitize_email(get_sub_field("email"));
+							$email = get_sub_field("email");
 							if ($email) {
-								echo "<p><a href='mailto:" . esc_attr($email) . "'>" . esc_html($email) . "</a></p>";
+								echo "<a href='mailto:" . esc_attr($email) . "'>" . esc_html($email) . "</a>";
 							}
 						}
+						?>
+						</article>
+						<?php
 					}
 				}
 			}

@@ -71,18 +71,6 @@ function umami_theme_setup() {
 		)
 	);
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support(
-		'custom-background',
-		apply_filters(
-			'umami_theme_custom_background_args',
-			array(
-				'default-color' => 'ffffff',
-				'default-image' => '',
-			)
-		)
-	);
-
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
@@ -120,20 +108,6 @@ add_action( 'after_setup_theme', 'umami_theme_content_width', 0 );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function umami_theme_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Sidebar', 'umami-theme' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'umami-theme' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-}
-add_action( 'widgets_init', 'umami_theme_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
@@ -144,21 +118,13 @@ function umami_theme_scripts() {
 
 	wp_enqueue_script( 'umami-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
+	wp_enqueue_script('jquery');
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'umami_theme_scripts' );
-
-function enqueue_jquery() {
-    wp_enqueue_script('jquery'); // Enqueue jQuery from WordPress core
-}
-add_action('wp_enqueue_scripts', 'enqueue_jquery');
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -211,45 +177,11 @@ function urb_testimonial_shortcode() {
 			$query->the_post();
 			
 			$output = "<h2>" . get_the_title() . "</h2>";
-			$output .= "<blockquote>" . get_the_content() . "</blockquote>";
+			$output .= get_the_content();
 		}
 
 		wp_reset_postdata();
 	}
 
 	return $output;
-}
-
-add_action( 'woocommerce_init', 'remove_all_wc_add_to_cart' );
-function remove_all_wc_add_to_cart() {
-    remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
-}
-
-remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
-remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
-
-// remove star rating under products in product archive
-remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
-
-// add a view product details button to the product archives
-add_action( 'woocommerce_after_shop_loop_item', 'urb_view_product_details_button', 9 );
-function urb_view_product_details_button() {
-	global $product;
-	$product_id = $product->get_id();
-	$product_permalink = get_permalink($product_id);
-	echo '<a href="' . $product_permalink . '" class="button">View Product Details</a>';
-}
-
-// add a view details button to yith quick view if it exists
-if ( function_exists( 'YITH_WCQV_Frontend' ) ) {
-	add_action( 'yith_wcqv_product_summary', 'urb_view_product_details_button', 9 );
-}
-
-// remove gift card product (id is 358) from the shop page
-add_action( 'woocommerce_product_query', 'urb_exclude_gift_card_from_shop' );
-
-function urb_exclude_gift_card_from_shop( $q ) {
-	if ( ! is_admin() && $q->is_main_query() && $q->is_post_type_archive( 'product' ) ) {
-		$q->set( 'post__not_in', array( 358 ) );
-	}
 }

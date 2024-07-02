@@ -225,3 +225,38 @@ if ( ! function_exists( 'umami_theme_woocommerce_header_cart' ) ) {
 		<?php
 	}
 }
+
+
+add_action( 'woocommerce_init', 'remove_all_wc_add_to_cart' );
+function remove_all_wc_add_to_cart() {
+    remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+}
+
+remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
+
+// remove star rating under products in product archive
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+
+// add a view product details button to the product archives
+add_action( 'woocommerce_after_shop_loop_item', 'urb_view_product_details_button', 9 );
+function urb_view_product_details_button() {
+	global $product;
+	$product_id = $product->get_id();
+	$product_permalink = get_permalink($product_id);
+	echo '<a href="' . $product_permalink . '" class="button">View Product Details</a>';
+}
+
+// add a view details button to yith quick view if it exists
+if ( function_exists( 'YITH_WCQV_Frontend' ) ) {
+	add_action( 'yith_wcqv_product_summary', 'urb_view_product_details_button', 9 );
+}
+
+// remove gift card product (id is 358) from the shop page
+add_action( 'woocommerce_product_query', 'urb_exclude_gift_card_from_shop' );
+
+function urb_exclude_gift_card_from_shop( $q ) {
+	if ( ! is_admin() && $q->is_main_query() && $q->is_post_type_archive( 'product' ) ) {
+		$q->set( 'post__not_in', array( 358 ) );
+	}
+}
