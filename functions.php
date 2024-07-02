@@ -219,3 +219,9 @@ function urb_testimonial_shortcode() {
 
 	return $output;
 }
+
+add_action( 'woocommerce_init', 'remove_all_wc_add_to_cart' );
+function remove_all_wc_add_to_cart() {
+    remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+}
