@@ -245,4 +245,11 @@ if ( function_exists( 'YITH_WCQV_Frontend' ) ) {
 	add_action( 'yith_wcqv_product_summary', 'urb_view_product_details_button', 9 );
 }
 
+// remove gift card product (id is 358) from the shop page
+add_action( 'woocommerce_product_query', 'urb_exclude_gift_card_from_shop' );
 
+function urb_exclude_gift_card_from_shop( $q ) {
+	if ( ! is_admin() && $q->is_main_query() && $q->is_post_type_archive( 'product' ) ) {
+		$q->set( 'post__not_in', array( 358 ) );
+	}
+}
