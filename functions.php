@@ -123,6 +123,13 @@ function umami_theme_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	wp_enqueue_style(
+		'google-fonts', 
+		'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@100..900&display=swap', 
+		array(),
+		null
+	);
 }
 add_action( 'wp_enqueue_scripts', 'umami_theme_scripts' );
 
