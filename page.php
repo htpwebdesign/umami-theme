@@ -23,6 +23,39 @@ get_header();
 
 			get_template_part( 'template-parts/content', 'page' );
 
+			if (function_exists("get_field")) {
+				if (have_rows("contact_repeater")) {
+					while (have_rows("contact_repeater")) {
+
+						the_row();
+
+						if (get_sub_field("location_name")) {
+							$location_name = sanitize_text_field(get_sub_field("location_name"));
+							echo "<p>" . esc_html($location_name) . "</p>";
+						}
+
+						if (get_sub_field("address")) {
+							$address = sanitize_text_field(get_sub_field("address"));
+							echo "<p>" . esc_html($address) . "</p>";
+						}
+
+						
+
+						if (get_sub_field("phone")) {
+							$phone = sanitize_text_field(get_sub_field("phone"));
+							echo "<p>" . esc_html($phone) . "</p>";
+						}
+
+						if (get_sub_field("email")) {
+							$email = sanitize_email(get_sub_field("email"));
+							if ($email) {
+								echo "<p><a href='mailto:" . esc_attr($email) . "'>" . esc_html($email) . "</a></p>";
+							}
+						}
+					}
+				}
+			}
+
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
