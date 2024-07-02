@@ -53,6 +53,11 @@ get_header();
 								echo "<a href='mailto:" . esc_attr($email) . "'>" . esc_html($email) . "</a>";
 							}
 						}
+
+						if (get_sub_field("hours_of_operation")) {
+							$hours_of_operation = get_sub_field("hours_of_operation");
+							echo "<p>" . esc_html($hours_of_operation) . "</p>";
+						}
 						?>
 						</article>
 						<?php
