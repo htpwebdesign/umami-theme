@@ -220,36 +220,29 @@ function urb_testimonial_shortcode() {
 	return $output;
 }
 
-// add_action( 'woocommerce_init', 'remove_all_wc_add_to_cart' );
-// function remove_all_wc_add_to_cart() {
-//     remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
-//     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
-// }
+add_action( 'woocommerce_init', 'remove_all_wc_add_to_cart' );
+function remove_all_wc_add_to_cart() {
+    remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+}
 
 remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
 remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
 
-// Change add to cart text on single product page
-add_filter( 'woocommerce_product_single_add_to_cart_text', 'woocommerce_add_to_cart_button_text_single' ); 
-function woocommerce_add_to_cart_button_text_single() {
-    return __( 'Add to Cart', 'woocommerce' ); 
+// remove star rating under products in product archive
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+
+// add a view product details button to the product archives
+add_action( 'woocommerce_after_shop_loop_item', 'urb_view_product_details_button', 9 );
+function urb_view_product_details_button() {
+	global $product;
+	$product_id = $product->get_id();
+	$product_permalink = get_permalink($product_id);
+	echo '<a href="' . $product_permalink . '" class="button">View Product Details</a>';
 }
 
-// Change add to cart text on product archives page
-add_filter( 'woocommerce_product_add_to_cart_text', 'woocommerce_add_to_cart_button_text_archives' );  
-function woocommerce_add_to_cart_button_text_archives() {
-    return __( 'View Product Details', 'woocommerce' );
+// add a view details button to yith quick view if it exists
+if ( function_exists( 'YITH_WCQV_Frontend' ) ) {
+	add_action( 'yith_wcqv_product_summary', 'urb_view_product_details_button', 9 );
 }
 
-// change the text of the "Select options" button on the product archives page
-add_filter( 'gettext', 'change_some_woocommerce_strings', 10, 3 );
-function change_some_woocommerce_strings( $translate_text, $original_text, $domain ) {
-    global $woocommerce_loop;
 
-    if ( isset($woocommerce_loop['is_paginated']) 
-    && ! empty($woocommerce_loop['is_paginated'])
-    && strtolower($original_text) === strtolower('Select options') ) {
-        $translate_text = __('View Product Details', $domain );
-    }
-    return $translate_text;
-}
