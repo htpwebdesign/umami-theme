@@ -225,3 +225,5 @@ if ( ! function_exists( 'umami_theme_woocommerce_header_cart' ) ) {
 		<?php
 	}
 }
+
+remove_action('woocommerce_sidebar');
