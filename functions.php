@@ -240,3 +240,15 @@ add_filter( 'woocommerce_product_add_to_cart_text', 'woocommerce_add_to_cart_but
 function woocommerce_add_to_cart_button_text_archives() {
     return __( 'View Product Details', 'woocommerce' );
 }
+
+add_filter( 'gettext', 'change_some_woocommerce_strings', 10, 3 );
+function change_some_woocommerce_strings( $translate_text, $original_text, $domain ) {
+    global $woocommerce_loop;
+
+    if ( isset($woocommerce_loop['is_paginated']) 
+    && ! empty($woocommerce_loop['is_paginated'])
+    && strtolower($original_text) === strtolower('Select options') ) {
+        $translate_text = __('View Product Details', $domain );
+    }
+    return $translate_text;
+}
