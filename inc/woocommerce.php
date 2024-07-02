@@ -260,3 +260,5 @@ function urb_exclude_gift_card_from_shop( $q ) {
 		$q->set( 'post__not_in', array( 358 ) );
 	}
 }
+
+remove_action('woocommerce_sidebar');
