@@ -12,16 +12,39 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-		<nav class="footer-navigation">
+		<?php the_custom_logo(); ?>
+		<div class="footer-contact">
 			<?php
 			wp_nav_menu(
 				array(
-					'theme_location' => 'footer-menu',
-					'menu_id'        => 'footer-menu',
+					'theme_location' => 'contact-menu',
+					'menu_id'        => 'contact-menu',
 				)
 			);
 			?>
-		</nav>
+		</div><!-- .footer-contact -->
+		<div class="footer-menus">
+			<nav class="footer-navigation">
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'footer-menu',
+						'menu_id'        => 'footer-menu',
+					)
+				);
+				?>
+			</nav>
+			<nav class="social-navigation">
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'social-menu',
+						'menu_id'        => 'social-menu',
+					)
+				);
+				?>
+			</nav>
+		</div><!-- .footer-menus -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

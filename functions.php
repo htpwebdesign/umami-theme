@@ -50,7 +50,9 @@ function umami_theme_setup() {
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', 'umami-theme' ),
-			'footer-menu' => __( 'Footer Menu' ),
+			'footer-menu' => esc_html__( 'Footer Menu', 'umami-theme' ),
+			'social-menu' => esc_html__( 'Footer Menu - Social', 'umami-theme' ),
+			'contact-menu' => esc_html__( 'Footer Menu - Contact', 'umami-theme' ),
 		)
 	);
 
@@ -185,3 +187,34 @@ function urb_testimonial_shortcode() {
 
 	return $output;
 }
+
+function urb_contact_footer_menu($items, $args) {
+	if ( $args->theme_location == 'contact-menu' ) {
+		if ( function_exists( 'get_field' ) ) {
+			$menu_object = wp_get_nav_menu_object( $args->menu );
+            if ( $menu_object && have_rows( 'contact_repeater_footer', $menu_object ) ) {
+                while ( have_rows( 'contact_repeater_footer', $menu_object ) ) {
+                    the_row();
+
+					$location_name = get_sub_field( 'location_name' );
+					$address = get_sub_field( 'address' );
+					$phone = get_sub_field( 'phone' );
+					$email = get_sub_field( 'email' );
+					$hours_of_operation = get_sub_field( 'hours_of_operation' );
+
+					$items .= "<li>";
+					$items .= "<h3>" . esc_html($location_name) . "</h3>";
+					$items .= "<p>" . esc_html($address) . "</p>";
+					$items .= "<p>" . esc_html($phone) . "</p>";
+					$items .= "<a href='mailto:" . esc_attr($email) . "'>" . esc_html($email) . "</a>";
+					$items .= "<p>" . esc_html($hours_of_operation) . "</p>";
+					$items .= "</li>";
+				}
+			} 
+		}
+	}
+
+	return $items;
+}
+
+add_filter('wp_nav_menu_items', 'urb_contact_footer_menu', 10, 2);
