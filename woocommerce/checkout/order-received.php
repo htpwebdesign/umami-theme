@@ -32,7 +32,7 @@ defined( 'ABSPATH' ) || exit;
 	 */
 	$message = apply_filters(
 		'woocommerce_thankyou_order_received_text',
-		esc_html( __( 'Thank you. Your order has been received.', 'woocommerce' ) ),
+		esc_html( __( 'Thank you. Your order has been received. Our orders should take up to 30-45 minutes to complete, but during peak hours it could take up to an hour.', 'woocommerce' ) ),
 		$order
 	);
 
