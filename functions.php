@@ -225,3 +225,53 @@ function urb_contact_footer_menu($items, $args) {
 }
 
 add_filter('wp_nav_menu_items', 'urb_contact_footer_menu', 10, 2);
+
+// add_filter('woocommerce_shipping_package_name', 'change_shipping_text_to_delivery', 20, 3 );
+// function change_shipping_text_to_delivery( $sprintf, $i, $package ) {
+//     $sprintf = sprintf( _nx( 'Delivery', 'Delivery %d', ( $i + 1 ), 'delivery packages', 'woocommerce' ), ( $i + 1 ) );
+//     return $sprintf;
+// }
+
+// add_filter( 'woocommerce_shipping_package_name', 'custom_shipping_package_name' );
+// function custom_shipping_package_name( $name ) {
+//     return 'Delivery';
+// }
+
+// add_filter( 'woocommerce_shipping_package_name', 'custom_shipping_package_name' );
+// function custom_shipping_package_name( $name ) {
+// return 'Delivery';
+// }
+ 
+// function fix_woocommerce_strings( $translated, $text) {
+// // STRING 1
+// $translated = str_ireplace( 'Shipping', 'Delivery charge', $translated );
+ 
+// return $translated;
+// }
+// add_filter( 'gettext', 'fix_woocommerce_strings', 999, 3 );
+
+// add_filter( 'gettext', 'custom_translate_text', 20, 3 );
+// function custom_translate_text( $translated_text, $text, $domain ) {
+//     if ( $domain === 'woocommerce' ) {
+//         switch ( $translated_text ) {
+//             case 'Ship to' :
+//                 $translated_text = 'Delivery';
+//                 break;
+//             case 'Shipping' :
+//                 $translated_text = 'Delivery';
+//                 break;
+//         }
+//     }
+//     return $translated_text;
+// }
+function fix_woocommerce_strings( $translated, $text, $domain ) {
+
+    // STRING 1
+    $translated = str_ireplace( 'Shipping', 'Delivery', $translated );
+
+
+    return $translated;
+    }
+
+
+    add_filter( 'gettext', 'fix_woocommerce_strings', 999, 3 );
