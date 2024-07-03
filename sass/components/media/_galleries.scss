@@ -10,6 +10,13 @@
 	width: 100%;
 }
 
+.instagram-gallery-feed {
+	.instagram-gallery-list{
+		max-width: 57.375rem;
+		margin: 0 auto;
+	
+	}
+}
 // Loops to enumerate the classes for gallery columns.
 @for $i from 2 through 9 {
 
@@ -21,3 +28,9 @@
 .gallery-caption {
 	display: block;
 }
+
+//Featured Items Gallery
+.wc-block-grid .wc-block-grid__products {
+	padding: 2rem 0;
+}
+

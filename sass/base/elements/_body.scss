@@ -1,3 +1,21 @@
 body {
 	background: $color__background-body; // Fallback for when there is no custom background color defined.
 }
+
+html {
+	max-width: 120rem;
+	margin: 0 auto;
+	background-color: $color__background-notice;
+	.site {
+		box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 1);
+		
+	}
+	.post-type-archive .site-main,
+	.page-id-103 .site-main,
+	.page-id-15 .site-main,
+	.page-id-16 .site-main,
+	.product .entry-summary {
+		max-width: 56.25rem;
+		margin: 0 auto;
+	}
+}

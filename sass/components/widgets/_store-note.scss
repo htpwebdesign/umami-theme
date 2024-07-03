@@ -1,0 +1,10 @@
+.woocommerce-store-notice {
+    background-color: $color__background-notice !important;
+    color: $color__text-dark;
+    text-align: center;
+    text-transform: uppercase;
+
+    &__dismiss-link {
+        color: $color__background-button;
+    }
+}

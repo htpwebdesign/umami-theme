@@ -12,7 +12,7 @@ a {
 	}
 
 	&:focus {
-		outline: thin dotted;
+		outline: thin solid $color__background-notice;
 	}
 
 	&:hover,
@@ -20,3 +20,25 @@ a {
 		outline: 0;
 	}
 }
+
+// Product title link 
+.wc-block-grid__product .wc-block-grid__product-title {
+	color: $color__background-dark;
+}
+
+//add to cart button
+.wp-block-button__link,
+a.button {
+	background-color: $color__background-dark;
+	transition: box-shadow 0.3s ease;
+	&:hover,
+	&:focus {
+		background-color: $color__background-button;
+		box-shadow: 3px 3px 1px 3px rgba(0, 0, 0, 0.5);
+	}
+	&:active {
+		box-shadow: inset 3px 3px 1px 3px rgba(0, 0, 0, 0.5);
+	}
+}
+
+
