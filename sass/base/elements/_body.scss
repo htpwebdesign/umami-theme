@@ -10,11 +10,16 @@ html {
 		box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 1);
 		
 	}
-	.post-type-archive .site-main,
+	.post-type-archive section,
+	.page-id-128 .site-main,
 	.page-id-103 .site-main,
 	.page-id-15 .site-main,
 	.page-id-16 .site-main,
-	.product .entry-summary {
+	.page-id-17 .site-main,
+	.page-id-18 .site-main,
+	.product .entry-summary,
+	.privacy-policy .site-main,
+	#category-menu ul {
 		max-width: 56.25rem;
 		margin: 0 auto;
 	}
