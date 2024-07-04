@@ -1,12 +1,32 @@
+@import '../../abstracts/mixins/mixins';
+
 #category-menu,
 .category-menu {
-    margin: 0 auto;
+    padding: 0 .5rem;
     background-color: $color__background-dark;
+    @include large {
+        margin: 0 auto;
+    }
     ul {
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+        li:nth-child(1),
+        li:nth-child(7) {
+            grid-column: span 3;
+        }
+        li:nth-child(8) {
+            grid-column: 3/4;
+            grid-row: 3/4;
+        }
+        gap: 1rem;
+        @include medium {
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: row;
+            gap: 0;
+        }
         list-style: none;
-        justify-content: space-evenly;
         padding: 1rem 0;
         margin: 0;
         a {

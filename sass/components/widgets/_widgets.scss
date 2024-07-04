@@ -7,11 +7,25 @@
 	}
 }
 
+#yith-quick-view-modal .yith-wcqv-wrapper {
+	width: 37.5rem;
+}
+
 .yith-wcqv-wrapper .yith-wcqv-main .yith-wcqv-head #yith-quick-view-close {
 	color: $color__background-dark;
 	opacity: 1;
+	&:hover,
+	&:focus {
+		color: $color__background-button;
+	}
 }
 
 #yith-quick-view-content {
 	align-content: center;
+	.woocommerce-product-gallery__trigger {
+		display: none;
+	}
+	div.images {
+		width: auto;
+	}
 }
