@@ -244,7 +244,7 @@ function urb_view_product_details_button() {
 	global $product;
 	$product_id = $product->get_id();
 	$product_permalink = get_permalink($product_id);
-	echo '<a href="' . $product_permalink . '" class="button">View Product Details</a>';
+	echo '<a href="' . $product_permalink . '" class="button">View Details</a>';
 }
 
 // add a view details button to yith quick view if it exists
