@@ -1,0 +1,68 @@
+// @use 'mixins/mixins' as mixins;
+@use 'abstracts/mixins/mixins' as mixins;
+.entry-content{
+    h2.wp-block-heading{
+        text-align: center;
+    }
+    p{
+        max-width: 280px;
+        margin: 0 auto;
+    }
+    h3{
+        text-align: center;
+        // text-decoration: underline;
+    }
+    img{
+        max-width: 260px;
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+@include mixins.medium{
+    .entry-content{
+        h2{
+            font-size: 2rem;
+        }
+        p{
+            max-width:500px;
+           
+        }
+        img{
+            max-width: 460px;
+        }
+        article {
+            max-width: 600px;
+        }
+
+        .article-content-wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+    }
+
+}
+// regroup and then grid item to the children if too hard to group the samll items do acf repeater
+
+@include mixins.large{
+    .entry-content{
+        // h2{
+        //     font-size: 3rem;
+        // }
+        // p {
+        //     max-width: 600px;
+        // }
+        img {
+            max-width: 300px; 
+        } 
+        .wp-block-group__inner-container.is-layout-constrained{
+            max-width: 800px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 1rem;
+           
+        }
+    }
+
+}
