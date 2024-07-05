@@ -36,10 +36,9 @@
 			// width: 100%;
 
 			#primary-menu {
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: center;
-				align-items: flex-end;
+				display: grid;
+				grid-template-columns: repeat(5, 1fr);
+				align-items: end;
 				list-style: none;
 				margin: 0;
 				// padding-left: 0;
@@ -49,15 +48,19 @@
 				li {
 					// position: relative;
 					// display: flex;
-					flex: 1 1;
+					// flex: 1 1;
+					// display: flex;
+					// flex-direction: column;
+					// align-items: center;
 
 					a {
+						// flex: 1 1;
 						display: flex;
 						flex-direction: column-reverse;
 						align-items: center;
 
 						svg {
-							width: 100%;
+							width: 50px;
 						}
 
 						svg:nth-child(1) {
