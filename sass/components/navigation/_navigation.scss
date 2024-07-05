@@ -1,73 +1,97 @@
-.main-navigation {
-	display: block;
-	width: 100%;
+.site-header {
+	display: flex;
+	justify-content: center;
+	padding: 1rem 0;
 
-	ul {
-		display: none;
-		list-style: none;
-		margin: 0;
-		padding-left: 0;
-
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 100%;
-			left: -999em;
-			z-index: 99999;
-
-			ul {
-				left: -999em;
-				top: 0;
+	.site-branding {
+		a {
+			img {
+				width: 100px;
 			}
+		}
 
-			li {
+		.site-title {
+			display: none;
+		}
+	}
 
-				&:hover > ul,
-				&.focus > ul {
+	.main-navigation {
+		display: block;
+		width: 100%;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 9999;
+		background-color: $color__background-dark;
+	
+		.menu-toggle {
+			display: none;
+		}
+
+		.menu-primary-menu-container {
+			// display: flex;
+			// flex-wrap: wrap;
+			// justify-content: center;
+			// width: 100%;
+
+			#primary-menu {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: flex-end;
+				list-style: none;
+				margin: 0;
+				// padding-left: 0;
+				padding: 1rem;
+				gap: 0.5rem;
+
+				li {
+					// position: relative;
+					// display: flex;
+					flex: 1 1;
+
+					a {
+						display: flex;
+						flex-direction: column-reverse;
+						align-items: center;
+
+						svg {
+							width: 100%;
+						}
+
+						svg:nth-child(1) {
+							display: none;
+						}
+					}
+				}
+
+				a {
 					display: block;
-					left: auto;
+					text-decoration: none;
+				}
+
+				.current_page_item > a,
+				.current-menu-item > a,
+				.current_page_ancestor > a,
+				.current-menu-ancestor > a {
+					// where we set the active link color/state
+					color: $color__link;
+
+					svg:nth-child(1) {
+						display: block;
+					}
+
+					svg:nth-child(2) {
+						display: none;
+					}
+					
 				}
 			}
-
-			a {
-				width: 200px;
-			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
-			}
 		}
-
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
-		}
-	}
-
-	li {
-		position: relative;
-
-		&:hover > a,
-		&.focus > a {
-		}
-	}
-
-	a {
-		display: block;
-		text-decoration: none;
-	}
-
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
 	}
 }
+
 
 /* Small menu. */
 .menu-toggle,
@@ -109,5 +133,10 @@
 }
 
 .woocommerce-breadcrumb {
+	display: none;
+}
+
+// temporarily display none store notice
+.woocommerce-store-notice .demo_store {
 	display: none;
 }
