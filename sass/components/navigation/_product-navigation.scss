@@ -1,12 +1,32 @@
+@import '../../abstracts/mixins/mixins';
+
 #category-menu,
 .category-menu {
-    margin: 0 auto;
+    padding: 0 .5rem;
     background-color: $color__background-dark;
+    @include large {
+        margin: 0 auto;
+    }
     ul {
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+        li:nth-child(1),
+        li:nth-child(7) {
+            grid-column: span 3;
+        }
+        li:nth-child(8) {
+            grid-column: 3/4;
+            grid-row: 3/4;
+        }
+        gap: 1rem;
+        @include medium {
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: row;
+            gap: 0;
+        }
         list-style: none;
-        justify-content: space-evenly;
         padding: 1rem 0;
         margin: 0;
         a {
@@ -31,35 +51,6 @@
 #yith-quick-view-content .summary-content a {
     border-radius: 5rem;
     padding: .25rem .5rem
-}
-
-
-.products li {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: .25rem;
-    background-color: #ffffff;
-    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, .1);
-    img,
-    h2,
-    span,
-    a {
-        grid-column: span 2;
-        justify-self: center;
-        margin-bottom: .5rem;
-    }
-    img {
-        margin-top: 1rem;
-        width: 150px;
-    }
-}
-
-ul.products li.product {
-    margin: 0;
-}
-
-.post-type-archive section h2 {
-    text-align: center;
 }
 
 .woocommerce-pagination {
