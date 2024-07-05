@@ -190,8 +190,10 @@ function urb_testimonial_shortcode() {
 		while ($query->have_posts()) {
 			$query->the_post();
 			
-			$output = "<h2>" . get_the_title() . "</h2>";
-			$output .= get_the_content();
+			$output = "<div class='testimonial'>";
+				$output .= "<h2>" . get_the_title() . "</h2>";
+				$output .= get_the_content();
+			$output .= "</div>";
 		}
 
 		wp_reset_postdata();
