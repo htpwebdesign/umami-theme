@@ -53,35 +53,6 @@
     padding: .25rem .5rem
 }
 
-
-.products li {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: .25rem;
-    background-color: #ffffff;
-    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, .1);
-    img,
-    h2,
-    span,
-    a {
-        grid-column: span 2;
-        justify-self: center;
-        margin-bottom: .5rem;
-    }
-    img {
-        margin-top: 1rem;
-        width: 150px;
-    }
-}
-
-ul.products li.product {
-    margin: 0;
-}
-
-.post-type-archive section h2 {
-    text-align: center;
-}
-
 .woocommerce-pagination {
     display: none;
 }

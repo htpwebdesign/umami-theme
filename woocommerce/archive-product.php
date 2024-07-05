@@ -46,7 +46,7 @@ $gift_card_id = $gift_card_category ? $gift_card_category->term_id : 0;
 ?>
 <nav id="category-menu">
     <ul>
-        <li><a href="#" class="category-link" data-category="all">All Products</a></li>
+        <li><a href="<?php echo esc_url(get_post_type_archive_link('product')); ?>" class="category-link" data-category="all">All Products</a></li>
         <?php
         $product_categories = get_terms( 'product_cat', array(
             'orderby'    => 'name',
@@ -75,12 +75,27 @@ $gift_card_id = $gift_card_category ? $gift_card_category->term_id : 0;
                     echo '<li><a href="' . esc_url( $product_link ) . '" class="category-link" data-category="build-your-own-ramen">' . esc_html( $category->name ) . '</a></li>';
                 }
             } else {
-                echo '<li><a href="#" class="category-link" data-category="' . esc_attr( $category->slug ) . '">' . esc_html( $category->name ) . '</a></li>';
+                echo '<li><a href="' . esc_url(get_post_type_archive_link('product')) . '" class="category-link" data-category="' . esc_attr( $category->slug ) . '">' . esc_html( $category->name ) . '</a></li>';
             }
         }
         ?>
     </ul>
 </nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const filterCategory = urlParams.get('filter');
+
+    if (filterCategory) {
+        const categoryLink = document.querySelector(`.category-link[data-category="${filterCategory}"]`);
+        if (categoryLink) {
+            categoryLink.click();
+        }
+    }
+});
+</script>
+
 <?php
 
 if ( woocommerce_product_loop() ) {
