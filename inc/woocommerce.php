@@ -263,3 +263,10 @@ function urb_exclude_gift_card_from_shop( $q ) {
 
 // remove woocommerce sidebar
 remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+
+// Remove the default store notice action
+remove_action('wp_footer', 'woocommerce_demo_store');
+
+
+
+
