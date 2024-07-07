@@ -223,8 +223,23 @@ p.stars {
 .woocommerce-error,
 .woocommerce-noreviews,
 p.no-comments {
-	background-color: $woocommerce__color-success;
+	background-color: $color__background-button;
 	clear: both;
+}
+
+.woocommerce-message {
+	display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 1rem;
+	padding: 2rem;
+	font-size: 1.25rem;
+
+	a.button {
+		padding: 1rem;
+		border-radius: 25px;
+		text-decoration: none;
+	}
 }
 
 .woocommerce-info,
