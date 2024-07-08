@@ -12,8 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function filterCategories(category) {
         if (isSingleProductPage) {
-            const archiveUrl = document.querySelector('.category-link[data-category="all"]').href;
-            window.location.href = `${archiveUrl}?filter=${category}`;
+            // Navigate to the archive page with the selected category filter
+            const archiveUrl = `${window.location.origin}${window.location.pathname}?filter=${category}`;
+            window.location.href = archiveUrl;
         } else {
             if (category === 'all') {
                 showAllCategories();
