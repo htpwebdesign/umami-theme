@@ -26,19 +26,25 @@
         }
         p{
             max-width:500px;
+            margin: 0 auto;
            
         }
         img{
-            max-width: 460px;
+            max-width: 300px;
+            display: block; 
+            margin: 0 auto; 
         }
         article {
             max-width: 600px;
+            margin: 0 auto;
         }
 
         .article-content-wrapper {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-gap: 20px;
+            justify-content: center;
+            align-items: center;
         }
     }
 
@@ -49,14 +55,16 @@
     .entry-content{
       
         img {
-            max-width: 300px; 
+            width: 500px;
+            height: 150px; 
+            object-fit: cover;
         } 
     }
     .page-id-128{
         .wp-block-group__inner-container.is-layout-constrained:first-of-type {
             display: grid;
-        //    grid-template-columns: 2fr;
-        //    gap: 2rem;
+            align-items: center;
+            justify-content: center;
         }
         
         .single-founder{
