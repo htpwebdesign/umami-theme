@@ -8,7 +8,14 @@ get_header('shop');
  */
 do_action('woocommerce_before_main_content');
 
-get_template_part('category-menu');
+// Check if the current post is a single product
+if (is_singular('product')) {
+    // Check if the product is not a "gift-card"
+    if (!has_term('gift-card', 'product_cat')) {
+        // Include the category menu
+        get_template_part('category-menu');
+    }
+}
 
 /**
  * Hook: woocommerce_before_single_product.

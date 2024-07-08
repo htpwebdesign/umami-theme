@@ -12,9 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function filterCategories(category) {
         if (category === 'build-your-own-ramen') {
+            // Redirect to the single product page for "Build Your Own Ramen"
             window.location.href = document.querySelector('.category-link[data-category="build-your-own-ramen"]').href;
         } else if (isSingleProductPage) {
-            const archiveUrl = `${window.location.origin}${window.location.pathname.replace(/\/product\/.*/, '/shop')}?filter=${category}`;
+            // Construct URL to the archive page filtered by category
+            const shopPageUrl = document.querySelector('.category-link[data-category="all"]').href;
+            const archiveUrl = `${shopPageUrl}?filter=${category}`;
             window.location.href = archiveUrl;
         } else {
             if (category === 'all') {
@@ -23,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 allSections.forEach(section => {
                     if (section.id === category) {
                         section.style.display = 'block';
+                        section.scrollIntoView({ behavior: 'smooth' });
                     } else {
                         section.style.display = 'none';
                     }
@@ -38,10 +42,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add click event listeners to category links
     categoryLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
             const category = this.getAttribute('data-category');
-            filterCategories(category);
+            if (!isSingleProductPage) {
+                filterCategories(category);
+            } else {
+                // Navigate to the shop page with the filter applied
+                const shopPageUrl = document.querySelector('.category-link[data-category="all"]').href;
+                const archiveUrl = `${shopPageUrl}?filter=${category}`;
+                window.location.href = archiveUrl;
+            }
         });
     });
 
@@ -52,8 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const allProductsLink = document.querySelector('.category-link[data-category="all"]');
     if (allProductsLink) {
-        allProductsLink.addEventListener('click', function(event) {
-            event.preventDefault();
+        allProductsLink.addEventListener('click', function(e) {
+            e.preventDefault();
             showAllCategories();
         });
     }
