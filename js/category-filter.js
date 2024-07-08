@@ -11,15 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function filterCategories(category) {
-        if (isSingleProductPage) {
-            // Navigate to the archive page with the selected category filter
-            const archiveUrl = `${window.location.origin}${window.location.pathname}?filter=${category}`;
+        if (category === 'build-your-own-ramen') {
+            window.location.href = document.querySelector('.category-link[data-category="build-your-own-ramen"]').href;
+        } else if (isSingleProductPage) {
+            const archiveUrl = `${window.location.origin}${window.location.pathname.replace(/\/product\/.*/, '/shop')}?filter=${category}`;
             window.location.href = archiveUrl;
         } else {
             if (category === 'all') {
                 showAllCategories();
-            } else if (category === 'build-your-own-ramen') {
-                window.location.href = document.querySelector('.category-link[data-category="build-your-own-ramen"]').href;
             } else {
                 allSections.forEach(section => {
                     if (section.id === category) {
@@ -32,12 +31,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    showAllCategories();
-
-    if (filterCategory) {
+    // On page load, filter categories if filter parameter exists
+    if (!isSingleProductPage && filterCategory) {
         filterCategories(filterCategory);
     }
 
+    // Add click event listeners to category links
     categoryLinks.forEach(link => {
         link.addEventListener('click', function(event) {
             event.preventDefault();
@@ -45,6 +44,11 @@ document.addEventListener('DOMContentLoaded', function() {
             filterCategories(category);
         });
     });
+
+    // On archive page, show all categories initially
+    if (!isSingleProductPage) {
+        showAllCategories();
+    }
 
     const allProductsLink = document.querySelector('.category-link[data-category="all"]');
     if (allProductsLink) {
