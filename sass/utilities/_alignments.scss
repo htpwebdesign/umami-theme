@@ -29,3 +29,42 @@
 
 	margin-bottom: 1.5em;
 }
+
+@include medium {
+	.wp-block-cover.alignleft,
+	.wp-block-cover.alignright {
+		max-width: 80vw;
+	}
+}
+
+@include large {
+	.alignleft {
+		margin-left: 5%;
+	}
+
+	.alignright {
+		margin-right: 5%;
+	}
+
+	.wp-block-cover.alignleft,
+	.wp-block-cover.alignright {
+		margin-bottom: 2em;
+		max-width: 70vw;
+	}
+}
+
+@include xlarge {
+	.alignleft {
+		margin-left: 10%;
+	}
+
+	.alignright {
+		margin-right: 10%;
+	}
+
+	.wp-block-cover.alignleft,
+	.wp-block-cover.alignright {
+		margin-bottom: 2.5em;
+		max-width: 60vw;
+	}
+}
