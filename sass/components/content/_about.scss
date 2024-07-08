@@ -55,15 +55,20 @@
     .page-id-128{
         .wp-block-group__inner-container.is-layout-constrained:first-of-type {
             display: grid;
-           grid-template-columns: 2fr;
-           gap: 2rem;
+        //    grid-template-columns: 2fr;
+        //    gap: 2rem;
         }
         
+        .single-founder{
+            padding: 2rem;
+        }
         .wp-block-group:nth-child(odd){
             grid-column: 1/2;
+            
         }
         .wp-block-group:nth-child(even){
             grid-column: 2/3;
+           
         }
         
     // }
