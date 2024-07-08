@@ -21,11 +21,22 @@
 }
 
 #yith-quick-view-content {
-	align-content: center;
-	.woocommerce-product-gallery__trigger {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.woocommerce-product-gallery__trigger,
+	.star-rating,
+	div.summary .product_meta {
 		display: none;
 	}
 	div.images {
 		width: auto;
+	}
+	div.summary {
+		width: 100%;
+		float: none;
+		.single_add_to_cart_button {
+			margin-top: .5rem;
+		}
 	}
 }
