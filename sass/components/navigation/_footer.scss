@@ -76,6 +76,7 @@ footer {
         align-self: center;
 
         svg {
+            width: 3rem;
             fill: $color__text-dark; //Match SVG color to the text of the footer
         }
     }
