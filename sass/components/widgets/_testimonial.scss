@@ -1,0 +1,11 @@
+.testimonial {
+    margin: 2rem auto 5rem;
+    border: .25rem solid $color__background-dark;
+    padding: 0 2rem 1rem;
+    width: fit-content;
+
+    .wp-block-quote cite {
+        margin: .75rem 0;
+        text-align: end;
+    }
+}

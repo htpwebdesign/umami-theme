@@ -57,3 +57,4 @@
 			?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
+	<?php woocommerce_demo_store(); ?>

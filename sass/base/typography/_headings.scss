@@ -7,4 +7,9 @@ h6 {
 	clear: both;
 	font-family: $font__heading;
 	font-size: 1.5rem;
+	font-weight: 500;
+}
+
+.home h2:not(.testimonial h2) {
+	margin: 4rem 2rem 0;
 }

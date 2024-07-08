@@ -13,7 +13,17 @@
 
 	<footer id="colophon" class="site-footer">
 		<?php the_custom_logo(); ?>
-		<div class="footer-contact">
+		<nav class="social-navigation">
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'social-menu',
+					'menu_id'        => 'social-menu',
+				)
+			);
+			?>
+		</nav>
+		<div class="contact-locations">
 			<?php
 			wp_nav_menu(
 				array(
@@ -23,8 +33,9 @@
 			);
 			?>
 		</div><!-- .footer-contact -->
-		<div class="footer-menus">
+		<div class="footer-menu">
 			<nav class="footer-navigation">
+				<h2>Company</h2>
 				<?php
 				wp_nav_menu(
 					array(
@@ -34,17 +45,17 @@
 				);
 				?>
 			</nav>
-			<nav class="social-navigation">
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'social-menu',
-						'menu_id'        => 'social-menu',
-					)
-				);
-				?>
-			</nav>
 		</div><!-- .footer-menus -->
+		<div class="site-info">
+			<p>&copy;2024 Urban Umami. All rights reserved |
+				<?php the_privacy_policy_link(); ?> |
+				<?php esc_html_e( 'Created by ', 'umami-theme' ); ?>
+				<a href="<?php echo esc_url( __( 'https://wp.bcitwebdeveloper.ca/', 'umami-theme' ) ); ?>">
+					<?php esc_html_e( 'CMNN', 'umami-theme' ); ?>
+				</a>
+			</p>
+			<!---->
+		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

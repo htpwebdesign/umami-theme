@@ -3,6 +3,8 @@
     color: $color__text-dark;
     text-align: center;
     text-transform: uppercase;
+    margin: 0;
+    padding: 1rem;
 
     &__dismiss-link {
         color: $color__background-button;
