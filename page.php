@@ -23,47 +23,6 @@ get_header();
 
 			get_template_part( 'template-parts/content', 'page' );
 
-			if (function_exists("get_field")) {
-				if (have_rows("contact_repeater")) {
-					while (have_rows("contact_repeater")) {
-
-						the_row();
-
-						?>
-						<article>
-						<?php
-						if (get_sub_field("location_name")) {
-							$location_name = get_sub_field("location_name");
-							echo "<p>" . esc_html($location_name) . "</p>";
-						}
-
-						if (get_sub_field("address")) {
-							$address = get_sub_field("address");
-							echo "<p>" . esc_html($address) . "</p>";
-						}
-
-						if (get_sub_field("phone")) {
-							$phone = get_sub_field("phone");
-							echo "<p>" . esc_html($phone) . "</p>";
-						}
-
-						if (get_sub_field("email")) {
-							$email = get_sub_field("email");
-							if ($email) {
-								echo "<a href='mailto:" . esc_attr($email) . "'>" . esc_html($email) . "</a>";
-							}
-						}
-
-						if (get_sub_field("hours_of_operation")) {
-							$hours_of_operation = get_sub_field("hours_of_operation");
-							echo "<p>" . esc_html($hours_of_operation) . "</p>";
-						}
-						?>
-						</article>
-						<?php
-					}
-				}
-			}
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
