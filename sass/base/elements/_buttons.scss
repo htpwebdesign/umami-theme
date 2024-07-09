@@ -19,3 +19,12 @@ input[type="submit"] {
 		border-color: $color__border-button-focus;
 	}
 }
+
+// general submit type button styling
+button[type="submit"] {
+    padding: 1.25rem 3rem;
+    border-radius: 25px;
+    font-size: 20px;
+    cursor: pointer;
+}
+

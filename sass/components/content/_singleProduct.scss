@@ -1,15 +1,8 @@
 .single-product {
     .site {
         .site-main {
-            // display: flex;
-            // flex-direction: column;
-            // align-items: center;
-            // padding: 1rem;
 
             .product {
-                // display: flex;
-                // flex-direction: column;
-                // align-items: center;
                 background-color: white;
                 padding: 1rem;
 
@@ -31,14 +24,11 @@
                 }
 
                 .summary {
-                    // background-color: white;
 
                     .woocommerce-product-rating {
                         display: flex;
                         justify-content: center;
                         gap: 1rem;
-                        // background-color: $color__background-dark;
-                        // padding: 1rem;
 
                         .star-rating span:before,
                         .star-rating::before,
@@ -77,12 +67,6 @@
                                 text-align: center;
                             }
 
-                        }
-                        button {
-                            padding: 1.25rem 3rem;
-                            border-radius: 25px;
-                            font-size: 20px;
-                            cursor: pointer;
                         }
                     }
 

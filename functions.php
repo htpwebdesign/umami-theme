@@ -234,3 +234,11 @@ function urb_contact_footer_menu($items, $args) {
 }
 
 add_filter('wp_nav_menu_items', 'urb_contact_footer_menu', 10, 2);
+
+/**
+ * Lower Yoast SEO Metabox location
+ */
+function yoast_to_bottom(){
+	return 'low';
+}
+add_filter( 'wpseo_metabox_prio', 'yoast_to_bottom' );
