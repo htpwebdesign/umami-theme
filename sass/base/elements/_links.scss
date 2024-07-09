@@ -29,7 +29,8 @@ a,
 
 //add to cart button
 .wp-block-button__link,
-a.button {
+a.button,
+.added_to_cart {
 	background-color: $color__background-dark;
 	transition: box-shadow 0.3s ease;
 	&:hover,

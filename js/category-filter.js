@@ -14,19 +14,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (category === 'build-your-own-ramen') {
             // Redirect to the single product page for "Build Your Own Ramen"
             window.location.href = document.querySelector('.category-link[data-category="build-your-own-ramen"]').href;
-        } else if (isSingleProductPage) {
-            // Construct URL to the archive page filtered by category
-            const shopPageUrl = document.querySelector('.category-link[data-category="all"]').href;
-            const archiveUrl = `${shopPageUrl}?filter=${category}`;
-            window.location.href = archiveUrl;
         } else {
             if (category === 'all') {
-                showAllCategories();
+                showAllCategories(); 
             } else {
                 allSections.forEach(section => {
                     if (section.id === category) {
                         section.style.display = 'block';
-                        section.scrollIntoView({ behavior: 'smooth' });
                     } else {
                         section.style.display = 'none';
                     }
@@ -48,24 +42,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!isSingleProductPage) {
                 filterCategories(category);
             } else {
-                // Navigate to the shop page with the filter applied
-                const shopPageUrl = document.querySelector('.category-link[data-category="all"]').href;
-                const archiveUrl = `${shopPageUrl}?filter=${category}`;
-                window.location.href = archiveUrl;
+                // Redirect to shop page with category filter applied
+                const shopPageLink = document.getElementById('menu-item-114').querySelector('a');
+                if (shopPageLink) {
+                    window.location.href = shopPageLink.href + `?filter=${category}`;
+                }
             }
         });
     });
-
-    // On archive page, show all categories initially
-    if (!isSingleProductPage) {
-        showAllCategories();
-    }
-
-    const allProductsLink = document.querySelector('.category-link[data-category="all"]');
-    if (allProductsLink) {
-        allProductsLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            showAllCategories();
-        });
-    }
 });

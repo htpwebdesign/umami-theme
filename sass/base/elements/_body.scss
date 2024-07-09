@@ -11,14 +11,15 @@ html {
 		
 	}
 	.post-type-archive section,
-	.page-id-128 .site-main,
-	.page-id-103 .site-main,
-	.page-id-15 .site-main,
-	.page-id-16 .site-main,
-	.page-id-17 .site-main,
-	.page-id-18 .site-main,
+	.page-id-128 .site-main .entry-content,
+	.page-id-103 .site-main article:not(#post-103),
+	.page-id-103 .site-main .entry-content,
+	.page-id-15 .site-main .entry-content,
+	.page-id-16 .site-main .entry-content,
+	.page-id-17 .site-main .entry-content,
+	.page-id-18 .site-main .entry-content,
 	.product .entry-summary,
-	.privacy-policy .site-main,
+	.privacy-policy .site-main .entry-content,
 	#category-menu ul {
 		max-width: 56.25rem;
 		margin: 0 auto;
