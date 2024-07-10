@@ -1,0 +1,22 @@
+#product-358 {
+    .entry-summary {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        #call_for_credit {
+            .wc-sc-row {
+                .wc-sc-input {
+                    input[type="number"] {
+                        
+                        border-radius: 25px;
+                    }
+                }
+            }
+        }
+
+        .product_meta {
+            display: none;
+        }
+    }
+}

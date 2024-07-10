@@ -25,12 +25,14 @@ button[type="submit"] {
     padding: 1.25rem 3rem;
     border-radius: 25px;
     font-size: 20px;
+	background-color: $color__background-dark;
+	color: $color__background-body;
     cursor: pointer;
 	transition: all ease-in-out 0.3s;
 
 	&:hover {
-		background: $color__background-dark;
-		color: $color__background-body;
+		background: $color__background-button;
+		color: $color__background-dark;
 	}
 }
 
