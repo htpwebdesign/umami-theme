@@ -27,7 +27,7 @@ a,
 	color: $color__background-dark;
 }
 
-//add to cart button
+//Add to cart button
 .wp-block-button__link,
 a.button,
 .added_to_cart {
@@ -43,4 +43,29 @@ a.button,
 	}
 }
 
+//Items in Cart links and button-like links
+.cart_item .product-name a,
+.product-remove a.remove {
+	color: $color__linkdark;
 
+	&:visited {
+		color: $color__linkdark-visited;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color__linkdark-hover;
+	}
+}
+
+.wc-proceed-to-checkout {
+	text-align: end;
+	a {
+		text-decoration: none;
+		text-transform: capitalize;
+	}
+	@include medium {
+        text-align: center;
+    }
+}

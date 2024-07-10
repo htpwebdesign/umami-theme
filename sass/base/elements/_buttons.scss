@@ -9,6 +9,7 @@ input[type="submit"] {
 	color: $color__button-text-dark;
 	line-height: 1;
 	padding: 0.6rem 1rem 0.4rem;
+	text-transform: capitalize;
 
 	&:hover {
 		border-color: $color__border-button-hover;
@@ -21,6 +22,7 @@ input[type="submit"] {
 }
 
 // general submit type button styling
+.wc-proceed-to-checkout a,
 button[type="submit"] {
     padding: 1.25rem 3rem;
     border-radius: 25px;

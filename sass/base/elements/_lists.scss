@@ -24,3 +24,11 @@ dt {
 dd {
 	margin: 0 1.5em 1.5em;
 }
+
+//For Cart page: to remove default list stylings
+ul#shipping_method {
+	margin: 0;
+	padding: 0;
+    list-style: none;
+}
+

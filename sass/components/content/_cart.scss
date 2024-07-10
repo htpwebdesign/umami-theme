@@ -1,0 +1,22 @@
+.page-id-15 .woocommerce {
+    margin: 0 1rem;
+
+    form.woocommerce-cart-form td.product-quantity input.input-text.qty.text {
+        width: 3rem;
+        text-align: center;
+    }
+
+    @include medium {
+        div.cart-collaterals {
+            margin-bottom: 4rem;
+            // width: 60%; //remove later
+            position: relative;
+
+            div.wc-proceed-to-checkout {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+        }
+    }
+}

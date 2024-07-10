@@ -1,7 +1,7 @@
 footer {
     padding: 0 1rem 6.5625rem; //Bottom value match the height of the thumb-navigation
     background-color: $color__background-dark;
-    color: $color__text-dark;
+    color: $color__link;
     clear: both;
     display: grid;
     grid-template-columns: 40% 60%;
@@ -75,7 +75,7 @@ footer {
 
         svg {
             width: 3rem;
-            fill: $color__text-dark; //Match SVG color to the text of the footer
+            fill: $color__link; //Match SVG color to the text of the footer
         }
     }
 

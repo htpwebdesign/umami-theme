@@ -2,3 +2,16 @@ table {
 	margin: 0 0 1.5em;
 	width: 100%;
 }
+
+table.shop_table.shop_table_responsive {
+	border-spacing: .875rem;
+
+	th {
+		vertical-align: top;
+	}
+
+	td.actions {
+		padding: 1rem 0;
+		text-align: end;
+	}
+}
