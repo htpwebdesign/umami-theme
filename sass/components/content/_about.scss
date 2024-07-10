@@ -47,7 +47,7 @@
 }
 // regroup and then grid item to the children if too hard to group the samll items do acf repeater
 @include mixins.large{
-    .entry-content{
+    .page-id-128 .entry-content{
       
         img {
             width: 500px;
