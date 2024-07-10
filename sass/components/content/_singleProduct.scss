@@ -136,6 +136,10 @@
                     .products {
                         .product {
                             background-color: #ffffff;
+
+                            .product-tags {
+                                display: none;
+                            }
                         }
                     }
                 }
