@@ -38,7 +38,7 @@ global $product;
     $product_tags = get_the_terms( $post->ID, 'product_tag');
     if ($product_tags && ! is_wp_error($product_tags)): ?>
         <?php foreach($product_tags as $tag): ?>
-            <a href="<?php echo get_term_link( $tag->slug, 'product_tag'); ?>" rel="tag" class="custom <?php echo $tag->slug; ?>"><p><?php echo $tag->name; ?></p></a>
+            <span class="custom <?php echo $tag->slug; ?>"><p><?php echo $tag->name; ?></p></span>
             <!-- screen reader text -->
             <span class="screen-reader-text"><?php echo $tag->name; ?></span>
         <?php endforeach; ?>
