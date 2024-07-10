@@ -4,6 +4,7 @@
 .category-menu {
     padding: 1rem .5rem;
     background-color: $color__background-dark;
+    text-transform: uppercase;
     @include large {
         margin: 0 auto;
     }

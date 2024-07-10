@@ -1,3 +1,8 @@
+@import "headings";
+@import "copy";
+@import "../../abstracts/variables/typography";
+@import "../../abstracts/mixins/mixins";
+
 body,
 button,
 input,
@@ -11,6 +16,17 @@ a {
 	line-height: $font__line-height-body;
 }
 
-@import "headings";
-@import "copy";
+.category-link,
+.nav-menu a {
+	font-family: $font__heading;
+}
 
+.category-link {
+	font-size: 1.5rem;
+}
+
+@include large {
+	.nav-menu a {
+		font-size: 1.75rem;
+	}
+}
