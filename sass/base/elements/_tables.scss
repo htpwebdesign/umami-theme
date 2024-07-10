@@ -41,5 +41,10 @@ table.shop_table.shop_table_responsive {
 	.cart-totals table.shop_table.shop_table_responsive {
 		margin: 0 0 1.5em auto;
 		width: 30rem;
+
+	}
+	
+	table.shop_table.shop_table_responsive tr.woocommerce-cart-form__cart-item.cart_item {
+		display: revert;
 	}
 }
