@@ -84,6 +84,24 @@
                         span:first-child {
                             display: none;
                         }
+
+                        .custom {
+                            text-decoration: none;
+                            color: $color__text-main;
+                        }
+
+                        .vegetarian::before {
+                            content: url(assets/veg-icon.svg);
+                        }
+
+                        .spicy::before {
+                            content: url(assets/spicy-icon.svg);
+                        }
+
+                        .gluten-free::before {
+                            content: url(assets/gf-icon.svg);
+                        }
+                        
                     }
                 }
 
