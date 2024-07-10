@@ -74,12 +74,43 @@
 
                     .product_meta {
                         text-align: center;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
                         span {
                             a {
 
                                 color: $color__text-main;
                             }
                         }
+
+                        span:first-child {
+                            display: none;
+                        }
+
+                        .custom {
+                            text-decoration: none;
+                            color: $color__text-main;
+                            margin-top: 1rem;
+
+                            p {
+                                margin: 0;
+                                color: $color__background-body;
+                            }
+                        }
+
+                        .vegetarian::before {
+                            content: url(assets/veg-icon.svg);
+                        }
+
+                        .spicy::before {
+                            content: url(assets/spicy-icon.svg);
+                        }
+
+                        .gluten-free::before {
+                            content: url(assets/gf-icon.svg);
+                        }
+                        
                     }
                 }
 
@@ -105,6 +136,10 @@
                     .products {
                         .product {
                             background-color: #ffffff;
+
+                            .product-tags {
+                                display: none;
+                            }
                         }
                     }
                 }
