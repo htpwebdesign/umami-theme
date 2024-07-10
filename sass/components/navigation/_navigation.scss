@@ -94,10 +94,6 @@
 
 						@include large {
 
-							font-size: 1.25rem;
-							text-transform: uppercase;
-							font-weight: 700;
-
 							&:active {
 								background-color: $color__background-button;
 							}
@@ -121,18 +117,6 @@
 				.current-menu-item > a,
 				.current_page_ancestor > a,
 				.current-menu-ancestor > a {
-
-					// svg:nth-child(1) {
-					// 	display: none;
-
-					// 	@include large {
-					// 		display: none;
-					// 	}
-					// }
-
-					// svg:nth-child(2) {
-					// 	display: block;
-					// }
 
 					svg:nth-child(2) {
 						display: block;
@@ -196,10 +180,6 @@
 	display: none;
 }
 
-// temporarily display none store notice
-.woocommerce-store-notice .demo_store {
-	// display: none;
-}
 .demo_store a.woocommerce-store-notice__dismiss-link {
 	display: none;
 }
