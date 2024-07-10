@@ -74,6 +74,9 @@
 
                     .product_meta {
                         text-align: center;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
                         span {
                             a {
 
@@ -88,6 +91,12 @@
                         .custom {
                             text-decoration: none;
                             color: $color__text-main;
+                            margin-top: 1rem;
+
+                            p {
+                                margin: 0;
+                                color: $color__background-body;
+                            }
                         }
 
                         .vegetarian::before {
