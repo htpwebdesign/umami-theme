@@ -1,3 +1,5 @@
+@use '../../abstracts/mixins/mixins';
+
 .widget {
 	margin: 0 0 1.5em;
 
@@ -26,7 +28,8 @@
 	align-items: center;
 	.woocommerce-product-gallery__trigger,
 	.star-rating,
-	div.summary .product_meta {
+	div.summary .product_meta,
+	a.button {
 		display: none;
 	}
 	div.images {
@@ -37,6 +40,30 @@
 		float: none;
 		.single_add_to_cart_button {
 			margin-top: .5rem;
+		}
+	}
+	.product_title {
+		font-size: 1.5rem;
+	}
+	h1, p {
+		padding: 0;
+		margin: 0;
+	}
+	.woocommerce-product-details__short-description {
+		max-width: 18.75rem;
+	}
+	.summary-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		@include medium {
+			display: block;
+			form {
+				text-align: center;
+			}
+			p {
+				padding: .5rem;
+			}
 		}
 	}
 }
