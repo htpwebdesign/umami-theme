@@ -2,9 +2,11 @@
     .entry-summary {
         .cart {
             .wc-pao-addons-container {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 1rem;
+                @include medium {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1rem;
+                }
                 .wc-pao-addon {
                     background-color: #ffffff;
                     padding: 1rem;
@@ -19,6 +21,7 @@
         }
     }
 
+    // disables visibility of reviews
     .woocommerce-tabs {
         display: none;
     }
