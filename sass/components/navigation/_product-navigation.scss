@@ -2,7 +2,7 @@
 
 #category-menu,
 .category-menu {
-    padding: 0 .5rem;
+    padding: 1rem .5rem;
     background-color: $color__background-dark;
     @include large {
         margin: 0 auto;
@@ -31,6 +31,7 @@
         margin: 0;
         a {
             padding: 1rem .5rem;
+            text-decoration: none;
             &:focus,
             &:hover {
                 background-color: $color__background-body;
