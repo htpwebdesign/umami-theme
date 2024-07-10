@@ -1,6 +1,5 @@
-// @use 'mixins/mixins' as mixins;
 @use 'abstracts/mixins/mixins' as mixins;
-.entry-content{
+.page-id-128 .entry-content {
     h2.wp-block-heading{
         text-align: center;
     }
@@ -10,7 +9,6 @@
     }
     h3{
         text-align: center;
-        // text-decoration: underline;
     }
     img{
         max-width: 260px;
@@ -18,16 +16,14 @@
         display: block;
     }
 }
-
 @include mixins.medium{
-    .entry-content{
+    .page-id-128 .entry-content{
         h2{
             font-size: 2rem;
         }
         p{
             max-width:500px;
             margin: 0 auto;
-           
         }
         img{
             max-width: 300px;
@@ -50,7 +46,6 @@
 
 }
 // regroup and then grid item to the children if too hard to group the samll items do acf repeater
-
 @include mixins.large{
     .entry-content{
       
@@ -66,21 +61,14 @@
             align-items: center;
             justify-content: center;
         }
-        
         .single-founder{
             padding: 2rem;
         }
         .wp-block-group:nth-child(odd){
             grid-column: 1/2;
-            
         }
         .wp-block-group:nth-child(even){
             grid-column: 2/3;
-           
         }
-        
-    // }
-       
     }
-
 }
