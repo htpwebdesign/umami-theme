@@ -80,6 +80,10 @@
                                 color: $color__text-main;
                             }
                         }
+
+                        span:first-child {
+                            display: none;
+                        }
                     }
                 }
 
