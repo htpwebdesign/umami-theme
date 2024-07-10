@@ -27,12 +27,19 @@ a,
 	color: $color__background-dark;
 }
 
-//Add to cart button
+// "button" a tag and real button styling
 .wp-block-button__link,
 a.button,
-.added_to_cart {
+.added_to_cart,
+.wc-proceed-to-checkout a,
+.checkout-button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
 	background-color: $color__background-dark;
 	transition: box-shadow 0.3s ease;
+	font-size: 1rem;
 	&:hover,
 	&:focus {
 		background-color: $color__background-button;
@@ -68,4 +75,18 @@ a.button,
 	@include medium {
         text-align: center;
     }
+}
+
+.checkout-button, a.wc-backward {
+	cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 20px;
+    color: #F3FDFF;
+    border: 0;
+	text-decoration: none;
+
+	&:hover {
+		color: $color__background-dark;
+	}
 }
