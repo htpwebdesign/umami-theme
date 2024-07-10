@@ -1,6 +1,11 @@
 .page-id-15 .woocommerce {
     margin: 0 1rem;
 
+    h2 {
+        font-size: 2rem;
+        text-align: end;
+    }
+
     div.woocommerce-message {
         padding: 1rem;
         gap: unset;
@@ -29,15 +34,14 @@
 
         div.cart-collaterals {
             margin-bottom: 4rem;
-            // width: 60%; //remove later
             position: relative;
 
-            div.wc-proceed-to-checkout {
-                position: absolute;
-                bottom: 0;
-                right: 0;
+            div.cart_totals {
+                tr th,
+                td {
+                    text-align: right;
+                }
             }
-
         }
     }
 }
