@@ -54,12 +54,12 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	if ($tags) {
         echo '<div class="product-tags">';
         foreach ($tags as $tag) {
-            if ($tag->name === 'gluten-free') {
-                echo '<span class="tag gluten-free"><img src="' . esc_url(get_template_directory_uri()) . '/images/gluten-free.png" alt="Gluten-Free"></span>';
-            } elseif ($tag->name === 'vegetarian') {
-                echo '<span class="tag vegetarian"><img src="' . esc_url(get_template_directory_uri()) . '/images/vegetarian.png" alt="Vegetarian"></span>';
-            } elseif ($tag->name === 'spicy') {
-				echo '<span class="tag spicy"><img src="' . esc_url(get_template_directory_uri()) . '/images/spicy.png" alt="Spicy"></span>';
+            if ($tag->name === 'Gluten Free') {
+                echo '<span class="tag gluten-free"><img src="' . esc_url(get_template_directory_uri()) . '/assets/gf-icon.svg" alt="Gluten Free"></span>';
+            } elseif ($tag->name === 'Vegetarian') {
+                echo '<span class="tag vegetarian"><img src="' . esc_url(get_template_directory_uri()) . '/assets/veg-icon.svg" alt="Vegetarian"></span>';
+            } elseif ($tag->name === 'Spicy') {
+				echo '<span class="tag spicy"><img src="' . esc_url(get_template_directory_uri()) . '/assets/spicy-icon.svg" alt="Spicy"></span>';
 			}
         }
         echo '</div>';
