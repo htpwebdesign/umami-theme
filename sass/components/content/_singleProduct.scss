@@ -84,6 +84,16 @@
                         span:first-child {
                             display: none;
                         }
+
+                        .custom {
+                            text-decoration: none;
+                            color: $color__text-main;
+                        }
+                        
+                        ::before {
+                            content: "•";
+                            margin: 0 0.5rem;
+                        }
                     }
                 }
 
