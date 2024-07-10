@@ -71,6 +71,10 @@
 						align-items: center;
 						text-decoration: none;
 
+						// &:first-child {
+						// 	font-size: 1rem;
+						// }
+
 						&:hover {
 							color: $color__background-dark;
 							background-color: $color__background-body;
