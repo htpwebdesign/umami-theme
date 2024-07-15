@@ -1,0 +1,13 @@
+@use '../../abstracts/mixins/mixins';
+
+.back-to-top {
+    position: fixed;
+    bottom: 6.25rem;
+    right: 0;
+    cursor: pointer;
+    margin-right: .5rem;
+    @include medium {
+        bottom: 15rem;
+        margin-right: 2rem;
+    }
+}

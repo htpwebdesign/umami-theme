@@ -1,21 +1,46 @@
 .page-id-15 .woocommerce {
     margin: 0 1rem;
 
-    form.woocommerce-cart-form td.product-quantity input.input-text.qty.text {
-        width: 3rem;
+    h2 {
+        font-size: 2rem;
+        text-align: end;
+    }
+
+    div.woocommerce-message {
+        padding: 1rem;
+        gap: unset;
+        font-size: 1rem;
+    }
+
+    form.woocommerce-cart-form td.product-quantity input.input-text.qty.text,
+    .cart-empty.woocommerce-info {
         text-align: center;
     }
 
+    form.woocommerce-cart-form td.product-quantity input.input-text.qty.text {
+        width: 3rem;
+    }
+
+    div.wc-empty-cart-message .cart-empty.woocommerce-info {
+        margin: 3rem auto;
+        background-color: $color__background-notice;
+        color: $color__text-light;
+    }
+
     @include medium {
+        div.wc-empty-cart-message {
+            height: 25vh;
+        }
+
         div.cart-collaterals {
             margin-bottom: 4rem;
-            // width: 60%; //remove later
             position: relative;
 
-            div.wc-proceed-to-checkout {
-                position: absolute;
-                bottom: 0;
-                right: 0;
+            div.cart_totals {
+                tr th,
+                td {
+                    text-align: right;
+                }
             }
         }
     }

@@ -66,26 +66,40 @@ input[type="submit"] {
 	}
 }
 
+.product-remove a.remove {
+	border-radius: 1rem;
+	padding: 0 .5rem;
+	background-color: $color__background-button;
+	font-size: 1.5rem;
+	text-decoration: none;
+
+	&:hover {
+		background-color: $color__background-dark;
+	}
+}
+
+.return-to-shop {
+	text-align: center;
+}
+
 .wc-proceed-to-checkout {
 	text-align: end;
 	a {
 		text-decoration: none;
 		text-transform: capitalize;
 	}
-	@include medium {
-        text-align: center;
-    }
 }
 
 .checkout-button, 
 a.wc-backward, 
 .added_to_cart,
 .products .product a,
-#yith-quick-view-content a {
+#yith-quick-view-content a,
+input[type = "submit"] {
 	cursor: pointer;
     padding: 0.5rem 1rem;
     border-radius: 25px;
-    font-size: 20px;
+    font-size: 1rem;
     color: #F3FDFF;
     border: 0;
 	text-decoration: none;
