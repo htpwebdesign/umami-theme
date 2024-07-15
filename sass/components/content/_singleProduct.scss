@@ -1,7 +1,6 @@
 .single-product {
     .site {
         .site-main {
-            
             .product {
                 background-color: $color__background-body;
                 padding: 3rem 1rem;
@@ -26,7 +25,6 @@
                 }
 
                 .summary {
-
                     .woocommerce-product-rating {
                         display: flex;
                         justify-content: center;
@@ -34,16 +32,14 @@
 
                         .star-rating span:before,
                         .star-rating::before,
-                        p.stars a:hover:after, 
+                        p.stars a:hover:after,
                         p.stars a:after {
                             color: #FF943D !important;
                         }
 
                         .woocommerce-review-link {
                             color: $color__text-main;
-                        
                         }
-
                     }
 
                     .price {
@@ -52,24 +48,57 @@
                         font-weight: 700;
                     }
 
-                    .woocommerce-product-details__short-description {
-                        text-align: center;
-                    }
-
                     .cart {
                         display: flex;
                         flex-direction: column;
                         align-items: center;
-                        gap: 1rem;
-                        margin: 1rem 0 2rem;
-
                         .quantity {
                             input[type=number] {
                                 width: 75px;
                                 text-align: center;
                             }
-
                         }
+                    }
+
+                    .variations_form {
+                        .variations {
+                            tbody {
+                                tr {
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+
+                                    .value {
+                                        .reset_variations {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .single_variation_wrap {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+
+                            .woocommerce-variation-add-to-cart {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+
+                                .quantity {
+                                    input[type=number] {
+                                        width: 75px;
+                                        text-align: center;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .woocommerce-product-details__short-description {
+                        text-align: center;
                     }
 
                     .product_meta {
@@ -77,14 +106,18 @@
                         display: flex;
                         flex-direction: row;
                         justify-content: center;
+
                         span {
                             a {
-
                                 color: $color__text-main;
                             }
                         }
 
                         span:first-child {
+                            display: none;
+                        }
+
+                        .posted_in {
                             display: none;
                         }
 
@@ -110,7 +143,6 @@
                         .gluten-free::before {
                             content: url(assets/gf-icon.svg);
                         }
-                        
                     }
                 }
 
@@ -122,9 +154,6 @@
                     .woocommerce-Tabs-panel {
                         max-width: 500px;
                         margin: 0 auto;
-                        p {
-                            max-width: unset;
-                        }
                     }
                 }
 

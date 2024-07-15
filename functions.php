@@ -242,10 +242,3 @@ function yoast_to_bottom(){
 	return 'low';
 }
 add_filter( 'wpseo_metabox_prio', 'yoast_to_bottom' );
-
-// function display_wc_notices() {
-//     if (function_exists('wc_print_notices')) {
-//         wc_print_notices();
-//     }
-// }
-

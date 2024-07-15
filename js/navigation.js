@@ -97,3 +97,20 @@
 		}
 	}
 }() );
+
+// Scroll to top button
+document.addEventListener('DOMContentLoaded', function() {
+    const topButton = document.getElementById('back-to-top');
+
+    topButton.addEventListener('click', function() {
+		window.scrollTo(0, 0);
+	})
+
+	window.addEventListener('scroll', function() {
+        if (window.scrollY > 0) {
+            topButton.style.opacity = '1'; // Show the button
+        } else {
+            topButton.style.opacity = '0'; // Hide the button
+        }
+    })
+});
