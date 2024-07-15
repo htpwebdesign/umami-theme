@@ -82,7 +82,7 @@ p.stars {
 			line-height: 1;
 			font-family: star;
 			content: "\53";
-			color: $color__text-main;
+			color: $color__background-button;
 			text-indent: 0;
 			opacity: 0.25;
 		}
@@ -91,7 +91,7 @@ p.stars {
 
 			~ a::before {
 				content: "\53";
-				color: $color__text-main;
+				color: $color__background-button;
 				opacity: 0.25;
 			}
 		}
@@ -103,7 +103,7 @@ p.stars {
 
 			&::before {
 				content: "\53";
-				color: $color__link;
+				color: $color__background-button;
 				opacity: 1;
 			}
 		}
@@ -115,13 +115,13 @@ p.stars {
 
 			&::before {
 				content: "\53";
-				color: $color__link;
+				color: $color__background-button;
 				opacity: 1;
 			}
 
 			~ a::before {
 				content: "\53";
-				color: $color__text-main;
+				color: $color__background-button;
 				opacity: 0.25;
 			}
 		}
@@ -130,7 +130,7 @@ p.stars {
 
 			&::before {
 				content: "\53";
-				color: $color__link;
+				color: $color__background-button;
 				opacity: 1;
 			}
 		}

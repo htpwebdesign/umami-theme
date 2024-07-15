@@ -25,6 +25,10 @@
                 }
 
                 .summary {
+                    border-bottom: 5px dashed #07505f;
+                    padding-bottom: 1rem;
+                    max-width: 500px;
+
                     .woocommerce-product-rating {
                         display: flex;
                         justify-content: center;
@@ -53,6 +57,8 @@
                         flex-direction: column;
                         align-items: center;
                         .quantity {
+                            margin: 1rem 0;
+
                             input[type=number] {
                                 width: 75px;
                                 text-align: center;
@@ -88,6 +94,8 @@
                                 align-items: center;
 
                                 .quantity {
+                                    margin: 1rem 0;
+
                                     input[type=number] {
                                         width: 75px;
                                         text-align: center;

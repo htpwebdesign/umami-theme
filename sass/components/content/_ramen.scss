@@ -1,5 +1,9 @@
 #product-256 {
     .entry-summary {
+        border-bottom: unset;
+        padding-bottom: unset;
+        max-width: unset;
+        
         .cart {
             .wc-pao-addons-container {
                 @include medium {
@@ -7,11 +11,16 @@
                     grid-template-columns: 1fr 1fr;
                     gap: 1rem;
                 }
+
                 .wc-pao-addon {
                     background-color: $color__white;
                     padding: 1rem;
                     border: 2px solid $color__background-dark;
                     margin: 1rem 0;
+
+                    @include medium {
+                        margin: 0;
+                    }
                 }
             }
         }
