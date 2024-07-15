@@ -1,6 +1,6 @@
 .products li,
 .wc-block-grid__products li {
-    background-color: #ffffff;
+    background-color: $color__white;
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, .1);
     position: relative;
     .added_to_cart {

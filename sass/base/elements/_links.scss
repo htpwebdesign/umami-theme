@@ -50,9 +50,11 @@ input[type="submit"] {
 	}
 }
 
-//Items in Cart links and button-like links
-.cart_item .product-name a,
-.product-remove a.remove {
+//Cart & Checkout Links and button-like links
+tr.woocommerce-cart-form__cart-item .product-name a,
+.product-remove a.remove,
+.wp-block-woocommerce-checkout-terms-block a,
+tr.woocommerce-table__line-item .product-name a {
 	color: $color__linkdark;
 
 	&:visited {
@@ -99,7 +101,7 @@ a.wc-backward,
     padding: 0.5rem 1rem;
     border-radius: 25px;
     font-size: 1rem;
-    color: #F3FDFF;
+    color: $color__link;
     border: 0;
 	text-decoration: none;
 

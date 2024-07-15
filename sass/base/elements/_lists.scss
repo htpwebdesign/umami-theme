@@ -25,10 +25,15 @@ dd {
 	margin: 0 1.5em 1.5em;
 }
 
-//For Cart page: to remove default list stylings
-ul#shipping_method {
-	margin: 0;
-	padding: 0;
+//For Cart & Checkout page: to remove default list stylings
+ul#shipping_method,
+table.shop_table.woocommerce-table--order-details ul,
+ul.woocommerce-order-overview {
     list-style: none;
 }
 
+ul#shipping_method,
+table.shop_table.woocommerce-table--order-details ul {
+	margin: 0;
+	padding: 0;
+}
