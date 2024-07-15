@@ -5,6 +5,7 @@
     bottom: 6.25rem;
     right: 0;
     cursor: pointer;
+    z-index: 9999;
     margin-right: .5rem;
     @include medium {
         bottom: 15rem;
