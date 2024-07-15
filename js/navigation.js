@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	
     topButton.addEventListener('click', function(e) {
 		e.preventDefault();
-		window.scrollTo(0, 0);
+		window.scrollTo({top: 0, behavior: 'smooth'});
 	})
 
 
