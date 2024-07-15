@@ -5,3 +5,15 @@
 .bypostauthor {
 	display: block;
 }
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .comment-form-author, .comment-form-email {
+        input {
+            width: 100%;
+        }
+    }
+}

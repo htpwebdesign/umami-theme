@@ -94,7 +94,8 @@ input[type="submit"] {
 a.wc-backward, 
 .added_to_cart,
 .products .product a,
-#yith-quick-view-content a {
+#yith-quick-view-content a,
+input[type = "submit"] {
 	cursor: pointer;
     padding: 0.5rem 1rem;
     border-radius: 25px;
