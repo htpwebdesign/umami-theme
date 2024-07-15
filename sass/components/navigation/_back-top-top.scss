@@ -7,8 +7,14 @@
     cursor: pointer;
     z-index: 9999;
     margin-right: .5rem;
+    display: flex;
+
     @include medium {
         bottom: 15rem;
         margin-right: 2rem;
+    }
+
+    svg {
+        fill: $color__background-body;
     }
 }
