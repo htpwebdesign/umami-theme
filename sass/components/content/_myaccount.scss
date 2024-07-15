@@ -1,0 +1,103 @@
+@use 'abstracts/mixins/mixins' as mixins;
+.page-id-17 .entry-content{
+    div.woocommerce{
+  
+        a.woocommerce-privacy-policy-link{
+            color: $color__linkdark;
+    }
+     p.woocommerce-form-row {
+        display: grid;
+        grid-template-columns: 40% 60%;
+  
+
+        input {
+            width: 100%;
+        }
+     
+     }
+     .woocommerce-button{
+        justify-content: center;
+
+     }
+    }
+    .woocommerce-form p:nth-of-type(3){
+        text-align: end;
+    }
+
+    .col-2 form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .woocommerce-form p:last-of-type {
+        justify-items: end;
+        align-items: end;
+        
+        button {
+            grid-column: 2;
+            width: fit-content;
+        }
+    }
+    .woocommerce-MyAccount-navigation{
+        list-style-type: none;
+        a{
+            color: $color__linkdark;
+        }
+    }
+    .woocommerce-MyAccount-content{
+        a{
+            color: $color__linkdark;
+        }
+    }
+    a.woocommerce-button.button.view{
+        color: $color__link;
+        padding: .3rem;
+       
+    }
+    a.button.wc-forward{
+       color: $color__link;
+       padding: .125rem;
+    }
+    a.button{
+        color: $color__link;
+        padding: .3rem;
+    }
+  
+  
+}
+
+
+@include mixins.medium{
+    .page-id-17 .entry-content{
+        ul{
+            list-style: none;
+            padding: 20px;
+            max-width: 1000px; 
+            margin: 20px auto; 
+            border-radius: 8px; 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 10px; 
+        }
+
+        li{
+            flex: auto;
+            padding: 15px; 
+            background-color: $color__linkdark; 
+            border: 1px solid $color__background-hr; 
+            border-radius: 1rem; 
+            box-sizing: border-box;
+        }
+        .woocommerce-MyAccount-navigation{
+
+            a{
+                color: $color__text-light;
+                &:hover{
+                    color: $color__background-button;
+                }
+            }
+        }
+    }
+
+}
+

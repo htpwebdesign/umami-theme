@@ -18,38 +18,10 @@ get_header();
 			</header><!-- .page-header -->
 
 			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'umami-theme' ); ?></p>
+				<p><?php esc_html_e( 'It looks like nothing was found at this location. Visit our menu page if you want to order some delicious Japanese food!', 'umami-theme' ); ?></p>
 
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'umami-theme' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$umami_theme_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'umami-theme' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$umami_theme_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="sad-face"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3.5 8c.828 0 1.5.671 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.671-1.5-1.5.672-1.5 1.5-1.5zm-7 0c.828 0 1.5.671 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.671-1.5-1.5.672-1.5 1.5-1.5zm8.122 9.377c-1.286-.819-2.732-1.308-4.622-1.308s-3.336.489-4.622 1.308l-.471-.58c.948-1.161 2.761-2.797 5.093-2.797s4.145 1.636 5.093 2.797l-.471.58z"/></svg>
+				<a href="<?php echo esc_url( home_url( '/menu/' ) ); ?>" class="menu-link-404"><?php esc_html_e( 'Menu', 'umami-theme' ); ?></a>
 
 			</div><!-- .page-content -->
 		</section><!-- .error-404 -->

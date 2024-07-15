@@ -102,15 +102,24 @@
 document.addEventListener('DOMContentLoaded', function() {
     const topButton = document.getElementById('back-to-top');
 
-    topButton.addEventListener('click', function() {
+	function toggleButtonVisibility() {
+		if (window.scrollY > 0) {
+			topButton.style.opacity = '1'; // Show the button
+		} else {
+			topButton.style.opacity = '0'; // Hide the button
+		}
+	}
+
+	// Initial check on page load
+	toggleButtonVisibility();
+
+	// Scroll event listener 
+	window.addEventListener('scroll', toggleButtonVisibility);
+	
+    topButton.addEventListener('click', function(e) {
+		e.preventDefault();
 		window.scrollTo(0, 0);
 	})
 
-	window.addEventListener('scroll', function() {
-        if (window.scrollY > 0) {
-            topButton.style.opacity = '1'; // Show the button
-        } else {
-            topButton.style.opacity = '0'; // Hide the button
-        }
-    })
+
 });
