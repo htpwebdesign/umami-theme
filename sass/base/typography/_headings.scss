@@ -12,8 +12,4 @@ h6 {
 
 .home h2:not(.testimonial h2) {
 	margin: 4rem 2rem 0;
-
-	@include large {
-		margin: 0;
-	}
 }
