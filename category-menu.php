@@ -14,6 +14,16 @@ if (!is_singular('product') || (is_singular('product') && !has_term('gift-card',
         'parent'     => 0,
     ));
 
+    // Define custom order of categories
+    $custom_order = array('appetizers', 'sushi', 'rice-noodles', 'build-your-own-ramen', 'combo', 'drinks', 'dessert');
+
+    // Sort the categories based on the custom order
+    usort($product_categories, function ($a, $b) use ($custom_order) {
+        $pos_a = array_search($a->slug, $custom_order);
+        $pos_b = array_search($b->slug, $custom_order);
+        return $pos_a - $pos_b;
+    });
+
     // Output the category menu
     ?>
     <nav id="category-menu">
