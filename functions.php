@@ -242,3 +242,63 @@ function yoast_to_bottom(){
 	return 'low';
 }
 add_filter( 'wpseo_metabox_prio', 'yoast_to_bottom' );
+
+// add_action('admin_menu', 'print_admin_menu');
+// function print_admin_menu() {
+//     global $menu;
+//     print_r($menu);
+// }
+
+// Eliminate menu options
+function eliminate_admin_menus() {
+	remove_menu_page('edit.php'); // Posts
+	remove_menu_page('edit-comments.php');   // Comments
+}
+add_action('admin_menu', 'eliminate_admin_menus');
+
+add_filter( 'woocommerce_admin_features', function( $features ) {
+    return array_values(
+        array_filter( $features, function($feature) {
+            return $feature !== 'marketing';
+        } ) 
+    );
+} );
+
+// // // Rename menus
+function rename_admin_menus() {
+    global $menu;
+	global $submenu;
+	// the menu items are stored in array
+	// $menu[a][b] ---> 'a' is the index in the array and 'b' is the element index of the 'a' array index
+    $menu[26][0] = 'Menu Items'; 
+	// Grabbing the "Products" menu and renaming to "Menu Items"
+	$submenu['edit.php?post_type=product'][5][0] = "All Menu Items";
+	// Grabbing the "All Products" sub menu and renaming to "All Menu Items"
+}
+
+add_action('admin_menu', 'rename_admin_menus');
+
+// // change orders of menu items
+function custom_menu_order($menu_order) {
+    if (!$menu_order) return true;
+	// display default order if there's no new given orders by user
+    
+    return array(
+        'index.php',                    // Dashboard
+		'separator1',                   // Separator(extra space between items)
+		'woocommerce',					// Woocommerce
+		'wt-smart-coupon-for-woo',		// Smart Coupons
+		'separator1',                   // Separator(extra space between items)
+        'edit.php?post_type=page',      // Pages
+        'upload.php',                   // Media
+		'separator1',                   // Separator(extra space between items)
+		'options-general.php',          // Settings
+        'users.php',                    // Users
+    );
+}
+
+// let user have authority to edit menu order
+add_filter('custom_menu_order', 'custom_menu_order');
+
+// finish editing menu order
+add_filter('menu_order', 'custom_menu_order');
