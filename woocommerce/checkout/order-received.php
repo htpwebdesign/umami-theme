@@ -34,13 +34,19 @@ defined( 'ABSPATH' ) || exit;
 	// Output the shipping method(s) formatted method title(s)
 	$shipping_method = $order->get_shipping_method();
 
+	if ($shipping_method == 'Flat rate' || $shipping_method == 'Free delivery') {
+		$output_text = esc_html( __( 'Thank you. Your order has been received. Our orders should take up to 30-45 minutes to complete, but during peak hours it could take up to an hour. We thank you for your patience.', 'woocommerce' ) );
+	} else {
+		$output_text = esc_html( __( 'Thank you. Your order has been received. Our orders should take up to 15 minutes to complete, but during peak hours it could take up to 45 minutes. We thank you for your patience.', 'woocommerce' ) );
+	}
+
 	$message = apply_filters(
 		'woocommerce_thankyou_order_received_text',
-		esc_html( __( 'Thank you. Your order has been received. Our orders should take up to 30-45 minutes to complete, but during peak hours it could take up to an hour.', 'woocommerce' ) ),
+		$output_text,
 		$order
 	);
 
 	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-	echo $message . $shipping_method;
+	echo $message;
 	?>
 </p>
