@@ -303,5 +303,36 @@ add_filter('custom_menu_order', 'custom_menu_order');
 // finish editing menu order
 add_filter('menu_order', 'custom_menu_order');
 
+<<<<<<< HEAD
 add_editor_style();
 add_theme_support( 'editor-styles' );
+=======
+// Add widget for the tutorial PDF for the Client
+/**
+ * Add custom dashboard widgets
+ */
+
+// Function to add custom dashboard widgets
+function add_custom_dashboard_widgets() {
+    // Add a new dashboard widget
+    wp_add_dashboard_widget(
+        'custom_dashboard_widget', // Widget slug (unique identifier).
+        'Helpful Resources',       // Title of the widget.
+        'custom_dashboard_widget_content' // Function to display the widget's content.
+    );
+}
+
+// Hook the 'add_custom_dashboard_widgets' function into 'wp_dashboard_setup' action
+add_action('wp_dashboard_setup', 'add_custom_dashboard_widgets');
+
+// Function to output the content of the custom widget
+function custom_dashboard_widget_content() {
+    echo '<h3>Welcome to Your Urban Umami Dashboard!</h3>';
+    echo '<p>Here are some helpful resources to get you started:</p>';
+    echo '<ul>
+            <li><a href="https://example.com/tutorial1" target="_blank">How to add a Menu Item</a></li>
+			<li><a href="https://example.com/tutorial1" target="_blank">How to add a new user</a></li>
+			<li><a href="https://example.com/tutorial1" target="_blank">How to confirm an order</a></li>
+          </ul>';
+}
+>>>>>>> 8c2074e77020e4a724d2a24810f296433d8aadf6
