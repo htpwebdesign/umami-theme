@@ -271,6 +271,17 @@ remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_pr
 add_action( 'woocommerce_single_product_summary', 'woocommerce_show_product_images', 5 );
 
 
+// add a custom message if the user picked local pickup
+add_action('woocommerce_thankyou', 'urb_local_pickup_message', 5);
+
+function urb_local_pickup_message( $order_id ) {
+	$order = wc_get_order( $order_id );
+	$shipping_method = $order->get_shipping_method();
+	if ( $shipping_method == 'Local Pickup' ) {
+		echo '<p>Your order is ready for pickup. Please come to the store to pick up your order.</p>';
+	}
+}
+
 
 
 
