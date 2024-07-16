@@ -271,16 +271,31 @@ remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_pr
 add_action( 'woocommerce_single_product_summary', 'woocommerce_show_product_images', 5 );
 
 
-// add a custom message if the user picked local pickup
-add_action('woocommerce_thankyou', 'urb_local_pickup_message', 5);
+add_action('woocommerce_thankyou', 'custom_order_received_message', 10, 1);
 
-function urb_local_pickup_message( $order_id ) {
-	$order = wc_get_order( $order_id );
-	$shipping_method = $order->get_shipping_method();
-	if ( $shipping_method == 'Local Pickup' ) {
-		echo '<p>Your order is ready for pickup. Please come to the store to pick up your order.</p>';
-	}
+function custom_order_received_message($order_id) {
+    if (!$order_id) {
+        return;
+    }
+
+    // Get the order object
+    $order = wc_get_order($order_id);
+
+    // Initialize shipping method variable
+    $shipping_method = '';
+
+    // Loop through the shipping items to get the shipping method ID
+    foreach ($order->get_items('shipping') as $item_id => $shipping_item) {
+        $shipping_method = $shipping_item->get_method_id();
+    }
+
+    // Customize the message based on the shipping method ID
+    if ($shipping_method == 'local_pickup') {
+        echo '<h2>Thank you for your order! Your order will be ready for pickup in approximately 15 minutes. However, during peak hours it can take up to 45 minutes. We thank you for your patience.</h2>';
+    }
 }
+
+
 
 
 
