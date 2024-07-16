@@ -302,3 +302,6 @@ add_filter('custom_menu_order', 'custom_menu_order');
 
 // finish editing menu order
 add_filter('menu_order', 'custom_menu_order');
+
+add_editor_style();
+add_theme_support( 'editor-styles' );
