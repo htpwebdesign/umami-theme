@@ -53,10 +53,6 @@ if (!is_singular('product') || (is_singular('product') && !has_term('gift-card',
                 } else {
                     // Link to product category archive
                     $category_link = esc_url(get_term_link($category));
-                // } else {
-                //     // Link to shop page with filter parameter
-                //     $shop_page_url = get_permalink(wc_get_page_id('shop')); // Get the shop page URL
-                //     $category_link = esc_url(add_query_arg('filter', $category->slug, $shop_page_url));
                 }
                 ?>
                 <li><a href="<?php echo $category_link; ?>" class="category-link" data-category="<?php echo esc_attr($category->slug); ?>" id="category-<?php echo esc_attr($category->slug); ?>"><?php echo esc_html($category->name); ?></a></li>

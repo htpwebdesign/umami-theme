@@ -53,6 +53,9 @@
 		padding: 0;
 		margin: 0;
 	}
+	.wp-post-image {
+		object-fit: cover;
+	}
 	.woocommerce-product-details__short-description {
 		max-width: 18.75rem;
 	}
