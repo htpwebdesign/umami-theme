@@ -302,11 +302,6 @@ add_filter('custom_menu_order', 'custom_menu_order');
 
 // finish editing menu order
 add_filter('menu_order', 'custom_menu_order');
-
-<<<<<<< HEAD
-add_editor_style();
-add_theme_support( 'editor-styles' );
-=======
 // Add widget for the tutorial PDF for the Client
 /**
  * Add custom dashboard widgets
@@ -335,4 +330,4 @@ function custom_dashboard_widget_content() {
 			<li><a href="https://example.com/tutorial1" target="_blank">How to confirm an order</a></li>
           </ul>';
 }
->>>>>>> 8c2074e77020e4a724d2a24810f296433d8aadf6
+
