@@ -331,3 +331,5 @@ function custom_dashboard_widget_content() {
           </ul>';
 }
 
+add_editor_style();
+add_theme_support( 'editor-styles' );
