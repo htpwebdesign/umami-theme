@@ -15,18 +15,3 @@ a {
 	font-size: 1rem;
 	line-height: $font__line-height-body;
 }
-
-.category-link,
-.nav-menu a {
-	font-family: $font__heading;
-}
-
-.category-link {
-	font-size: 1.5rem;
-}
-
-@include large {
-	.nav-menu a {
-		font-size: 1.75rem;
-	}
-}

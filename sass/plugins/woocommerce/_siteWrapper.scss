@@ -1,0 +1,25 @@
+html {
+	max-width: 120rem;
+	margin: 0 auto;
+	background-color: $color__background-notice;
+	.site {
+		box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 1);
+		
+	}
+	.post-type-archive section,
+	.page-id-128 .site-main .entry-content,
+	.page-id-103 .site-main article:not(#post-103),
+	.page-id-103 .site-main .entry-content,
+	.page-id-15 .site-main .entry-content,
+	.page-id-16 .site-main .entry-content,
+	.page-id-17 .site-main .entry-content,
+	.page-id-18 .site-main .entry-content,
+	.error404 .site-main .not-found,
+	.product .entry-summary,
+	.privacy-policy .site-main .entry-content,
+	#category-menu ul {
+		max-width: 56.25rem;
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+}

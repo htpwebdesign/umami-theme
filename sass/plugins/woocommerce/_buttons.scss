@@ -1,0 +1,19 @@
+button {
+	margin: .5rem 0;
+	cursor: pointer;
+	padding: 0.5rem 1rem;
+	border-radius: 25px;
+	font-size: 1rem;
+	background-color: $color__background-dark;
+	color: $color__background-body;
+	border: 0;
+
+	&:hover {
+		color: $color__background-dark;
+	}
+
+	&:active {
+		color: $color__background-dark;
+	}
+}
+

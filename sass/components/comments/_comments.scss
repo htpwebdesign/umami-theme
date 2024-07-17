@@ -1,42 +1,7 @@
-#reviews {
-	background-color: #ffffff;
-    padding: 1.5rem;
-    border-radius: 25px;
-    border: 0.25rem solid $color__background-dark;
-
-	#comments {
-		.commentlist {
-			margin: 0;
-			padding: 0;
-			list-style: none;
-		}
-	}
-
-	#review_form_wrapper {
-		#review_form {
-			#respond {
-				display: flex;
-				padding: 2rem 0;
-				border-top: 4px dashed $color__background-dark;
-				flex-direction: column;
-				align-items: center;
-
-				#reply-title {
-					font-weight: 700;
-					font-size: 1.25rem;
-				}
-			}
-		}
-	}
+.comment-content a {
+	word-wrap: break-word;
 }
-.comment-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
-    .comment-form-author, .comment-form-email {
-        input {
-            width: 100%;
-        }
-    }
+.bypostauthor {
+	display: block;
 }
