@@ -9,6 +9,10 @@
 			margin: 0;
 			padding: 0;
 			list-style: none;
+
+			li {
+				list-style: none;
+			}
 		}
 	}
 
@@ -29,6 +33,7 @@
 		}
 	}
 }
+
 .comment-form {
     display: flex;
     flex-direction: column;
