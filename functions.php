@@ -251,8 +251,10 @@ add_filter( 'wpseo_metabox_prio', 'yoast_to_bottom' );
 
 // Eliminate menu options
 function eliminate_admin_menus() {
-	remove_menu_page('edit.php'); // Posts
-	remove_menu_page('edit-comments.php');   // Comments
+	if(!current_user_can( 'manage_options' )){
+		remove_menu_page('edit.php'); // Posts
+		remove_menu_page('edit-comments.php');   // Comments
+	}
 }
 add_action('admin_menu', 'eliminate_admin_menus');
 
