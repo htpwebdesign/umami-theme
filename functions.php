@@ -327,11 +327,75 @@ function custom_dashboard_widget_content() {
     echo '<h3>Welcome to Your Urban Umami Dashboard!</h3>';
     echo '<p>Here are some helpful resources to get you started:</p>';
     echo '<ul>
-            <li><a href="https://example.com/tutorial1" target="_blank">How to add a Menu Item</a></li>
-			<li><a href="https://example.com/tutorial1" target="_blank">How to add a new user</a></li>
-			<li><a href="https://example.com/tutorial1" target="_blank">How to confirm an order</a></li>
+            <li><a href="https://docs.google.com/document/d/1xqsGAOj_pnrERLrn4te-F1mukTWwyzwFTK2wXI8AXo4/edit?usp=sharing" target="_blank">How to add a Menu Item</a></li>
+			<li><a href="https://docs.google.com/document/d/11PaJLbtNQAfa_Bdep6CoUNf2eNiLqe0Qhw7WGQ9qdus/edit?usp=sharing" target="_blank">How to add a new user</a></li>
+			<li><a href="https://docs.google.com/document/d/1NFYLyWdopn1hhBgJ7dHqgzD2wY6SqGmlEeriRF2-G0U/edit?usp=sharing" target="_blank">How to confirm an order</a></li>
           </ul>';
 }
 
 add_editor_style();
 add_theme_support( 'editor-styles' );
+
+function custom_login_css() {
+ echo '<style type="text/css">
+	body {
+		background-color: #F3FDFF;
+		font-family: "Outfit", sans-serif;
+		color: #131616;
+ 	}
+	#login {
+		padding: 1rem 0;
+	}
+	.login #login {
+		background-color: #07505F;
+	} 
+	.login h1 a {
+		background-image: url('. get_template_directory_uri() . '/assets/logo.png);
+	}
+	.login .message, .login .notice, .login .success {
+		background-color: #07505F;
+		border-left: none;
+		color: #F3FDFF;
+		box-shadow: 0 1px 1px 0 rgba(255, 148, 61, 1)
+	}
+	.login form {
+		border: 1px solid #07505F;
+		background: #F3FDFF;
+		box-shadow: 0 1px 3px rgba(7, 80, 95, 1)
+	}
+	input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea {
+		border: 1px solid #07505F;
+		color: #131616
+	}
+	input[type=checkbox]:focus, input[type=color]:focus, input[type=date]:focus, input[type=datetime-local]:focus, input[type=datetime]:focus, input[type=email]:focus, input[type=month]:focus, input[type=number]:focus, input[type=password]:focus, input[type=radio]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=text]:focus, input[type=time]:focus, input[type=url]:focus, input[type=week]:focus, select:focus, textarea:focus {
+		border-color: #07505F;
+		box-shadow: 0 0 0 1px #07505F;
+	}
+	.wp-core-ui .button, .wp-core-ui .button-secondary {
+		color: #07505F;
+		border-color: #07505F;
+		background: #F3FDFF;
+	}
+	.login #backtoblog a, .login #nav a, .login .privacy-policy-page-link a {
+		color: #F3FDFF;
+	}
+	.login #backtoblog a:hover, .login #nav a:hover, .login .privacy-policy-page-link a:hover {
+		color: #FF943D;
+	}
+	.wp-core-ui .button-primary {
+		background: #07505F;
+		color: #F3FDFF;
+		border-color: #FF943D;
+	}
+	.wp-core-ui .button-primary.focus, .wp-core-ui .button-primary.hover, .wp-core-ui .button-primary:focus, .wp-core-ui .button-primary:hover {
+		background: #FF943D;
+		border-color: #07505F;
+		color: #F3FDFF;
+	}
+	.privacy-policy-page-link a {
+		margin-bottom: 1rem;
+	}
+ </style>';
+}
+
+ add_action('login_head', 'custom_login_css');
