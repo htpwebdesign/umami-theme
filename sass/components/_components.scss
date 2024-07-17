@@ -1,32 +1,10 @@
-/* Header
---------------------------------------------- */
-@import "navigation/header";
-
-/* Footer
---------------------------------------------- */
-@import "navigation/footer";
-@import "navigation/back-top-top";
-
 /* Navigation
 --------------------------------------------- */
 @import "navigation/navigation";
-@import "navigation/product-navigation";
 
 /* Posts and pages
 --------------------------------------------- */
 @import "content/posts-and-pages";
-@import "content/products";
-@import "content/singleProduct";
-@import "content/ramen";
-@import "content/giftCard";
-@import "content/cart";
-@import "content/checkout";
-@import "content/contact";
-@import 'content/myaccount';
-@import 'content/404';
-/*About
---------------------------------------------- */
-@import "content/about";
 
 /* Comments
 --------------------------------------------- */
@@ -35,14 +13,6 @@
 /* Widgets
 --------------------------------------------- */
 @import "widgets/widgets";
-
-/* Widgets
---------------------------------------------- */
-@import "widgets/store-note";
-
-/*Testimonial
---------------------------------------------- */
-@import "widgets/testimonial";
 
 /* Media
 --------------------------------------------- */

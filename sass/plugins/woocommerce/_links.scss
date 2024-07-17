@@ -1,0 +1,129 @@
+a,
+#yith-quick-view-content button {
+	color: $color__link;
+
+	&:visited {
+		color: $color__link-visited;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color__link-hover;
+	}
+
+	&:focus {
+		outline: thin solid $color__background-notice;
+	}
+
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}
+
+// Product title link 
+.wc-block-grid__product .wc-block-grid__product-title {
+	color: $color__background-dark;
+}
+
+// "button" a tag and real button styling
+.wp-block-button__link,
+a.button,
+.added_to_cart,
+.wc-proceed-to-checkout a,
+.checkout-button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.menu-link-404 {
+	background-color: $color__background-dark;
+	transition: box-shadow 0.3s ease;
+	font-size: 1rem;
+	&:hover,
+	&:focus {
+		background-color: $color__background-button;
+		box-shadow: 3px 3px 1px 3px rgba(0, 0, 0, 0.5);
+	}
+	&:active {
+		box-shadow: inset 3px 3px 1px 3px rgba(0, 0, 0, 0.5);
+	}
+}
+
+//Cart & Checkout Links and button-like links
+tr.woocommerce-cart-form__cart-item .product-name a,
+.product-remove a.remove,
+.wp-block-woocommerce-checkout-terms-block a,
+tr.woocommerce-table__line-item .product-name a {
+	color: $color__linkdark;
+
+	&:visited {
+		color: $color__linkdark-visited;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color__linkdark-hover;
+	}
+}
+
+.product-remove a.remove {
+	border-radius: 1rem;
+	padding: 0 .5rem;
+	background-color: $color__background-button;
+	font-size: 1.5rem;
+	text-decoration: none;
+
+	&:hover {
+		background-color: $color__background-dark;
+	}
+}
+
+.return-to-shop {
+	text-align: center;
+}
+
+.wc-proceed-to-checkout {
+	text-align: end;
+	a {
+		text-decoration: none;
+		text-transform: capitalize;
+	}
+}
+
+.checkout-button, 
+a.wc-backward, 
+.added_to_cart,
+.products .product a,
+#yith-quick-view-content a,
+input[type = "submit"],
+.menu-link-404 {
+	cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    color: $color__link;
+    border: 0;
+	text-decoration: none;
+
+	&:hover {
+		color: $color__background-dark;
+	}
+}
+
+.category-link,
+.nav-menu a {
+	font-family: $font__heading;
+}
+
+.category-link {
+	font-size: 1.5rem;
+}
+
+@include large {
+	.nav-menu a {
+		font-size: 1.75rem;
+	}
+}

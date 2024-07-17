@@ -1,0 +1,76 @@
+@use '../../abstracts/mixins/mixins';
+
+.widget {
+	margin: 0 0 1.5em;
+
+	// Make sure select elements fit in widgets.
+	select {
+		max-width: 100%;
+	}
+}
+
+#yith-quick-view-modal {
+	z-index: 9999;
+}
+
+#yith-quick-view-modal .yith-wcqv-wrapper {
+	width: 37.5rem;
+}
+
+.yith-wcqv-wrapper .yith-wcqv-main .yith-wcqv-head #yith-quick-view-close {
+	color: $color__background-dark;
+	opacity: 1;
+	&:hover,
+	&:focus {
+		color: $color__background-button;
+	}
+}
+
+#yith-quick-view-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.woocommerce-product-gallery__trigger,
+	.star-rating,
+	div.summary .product_meta,
+	a.button {
+		display: none;
+	}
+	div.images {
+		width: auto;
+	}
+	div.summary {
+		width: 100%;
+		float: none;
+		.single_add_to_cart_button {
+			margin-top: .5rem;
+		}
+	}
+	.product_title {
+		font-size: 1.5rem;
+	}
+	h1, p {
+		padding: 0;
+		margin: 0;
+	}
+	.wp-post-image {
+		object-fit: cover;
+	}
+	.woocommerce-product-details__short-description {
+		max-width: 18.75rem;
+	}
+	.summary-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		@include medium {
+			display: block;
+			form {
+				text-align: center;
+			}
+			p {
+				padding: .5rem;
+			}
+		}
+	}
+}
