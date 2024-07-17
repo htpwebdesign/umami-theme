@@ -284,29 +284,27 @@ add_action('admin_menu', 'rename_admin_menus');
 function custom_menu_order($menu_order) {
 	if (!current_user_can('manage_options')) {
 		return $menu_order;
+		// Return custom menu order for non-admin users   
+		return array(
+			'index.php',                    // Dashboard
+			'separator1',                   // Separator(extra space between items)
+			'woocommerce',					// Woocommerce
+			'wt-smart-coupon-for-woo',		// Smart Coupons
+			'separator1',                   // Separator(extra space between items)
+			'edit.php?post_type=page',      // Pages
+			'upload.php',                   // Media
+			'separator1',                   // Separator(extra space between items)
+			'options-general.php',          // Settings
+			'users.php',                    // Users
+		);
 	}
-    if (!$menu_order) return true;
-	// display default order if there's no new given orders by user
-    
-    return array(
-        'index.php',                    // Dashboard
-		'separator1',                   // Separator(extra space between items)
-		'woocommerce',					// Woocommerce
-		'wt-smart-coupon-for-woo',		// Smart Coupons
-		'separator1',                   // Separator(extra space between items)
-        'edit.php?post_type=page',      // Pages
-        'upload.php',                   // Media
-		'separator1',                   // Separator(extra space between items)
-		'options-general.php',          // Settings
-        'users.php',                    // Users
-    );
+	// Return default menu order for admin users
+	return $menu_order;
 }
 
-// let user have authority to edit menu order
 add_filter('custom_menu_order', 'custom_menu_order');
-
-// finish editing menu order
 add_filter('menu_order', 'custom_menu_order');
+
 // Add widget for the tutorial PDF for the Client
 /**
  * Add custom dashboard widgets
