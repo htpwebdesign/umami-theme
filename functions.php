@@ -282,6 +282,9 @@ add_action('admin_menu', 'rename_admin_menus');
 
 // // change orders of menu items
 function custom_menu_order($menu_order) {
+	if (!current_user_can('manage_options')) {
+		return $menu_order;
+	}
     if (!$menu_order) return true;
 	// display default order if there's no new given orders by user
     
