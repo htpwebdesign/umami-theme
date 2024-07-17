@@ -35,8 +35,14 @@ footer {
         "info info info info";
     }
 
-    a:hover {
-        color: $color__background-button;
+    a {
+        &:hover {
+            color: $color__background-button;
+        }
+        
+        &:focus {
+            color: $color__link;
+        }
     }
 
     ul {

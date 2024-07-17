@@ -294,10 +294,3 @@ function custom_order_received_message($order_id) {
         echo '<h2>Thank you for your order! Your order will be ready for pickup in approximately 15 minutes. However, during peak hours it can take up to 45 minutes. We thank you for your patience.</h2>';
     }
 }
-
-
-
-
-
-
-

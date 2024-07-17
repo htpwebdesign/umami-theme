@@ -50,9 +50,18 @@
 			<p>&copy;2024 Urban Umami. All rights reserved |
 				<?php the_privacy_policy_link(); ?> |
 				<?php esc_html_e( 'Created by ', 'umami-theme' ); ?>
-				<a href="<?php echo esc_url( __( 'https://wp.bcitwebdeveloper.ca/', 'umami-theme' ) ); ?>">
-					<?php esc_html_e( 'CMNN', 'umami-theme' ); ?>
-				</a>
+				<a href="<?php echo esc_url( __( 'https://cgtwebdesigns.com/', 'umami-theme' ) ); ?>" target="_blank">
+					<?php esc_html_e( 'Catharina', 'umami-theme' ); ?>
+				</a>,
+				<a href="<?php echo esc_url( __( 'https://mlewebs.ca/', 'umami-theme' ) ); ?>" target="_blank">
+					<?php esc_html_e( 'Matthew', 'umami-theme' ); ?>
+				</a>,
+				<a href="<?php echo esc_url( __( 'https://ninaweng.com/', 'umami-theme' ) ); ?>" target="_blank">
+					<?php esc_html_e( 'Nina', 'umami-theme' ); ?>
+				</a>, and
+				<a href="<?php echo esc_url( __( 'https://natcreates.com/', 'umami-theme' ) ); ?>" target="_blank">
+					<?php esc_html_e( 'Natalia', 'umami-theme' ); ?>
+				</a>.
 			</p>
 			<!---->
 		</div><!-- .site-info -->

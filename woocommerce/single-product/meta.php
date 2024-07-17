@@ -44,7 +44,6 @@ global $product;
         <?php endforeach; ?>
     <?php endif; ?>
 
-
 	<?php do_action( 'woocommerce_product_meta_end' ); ?>
 
 </div>

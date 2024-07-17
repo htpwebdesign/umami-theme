@@ -243,12 +243,6 @@ function yoast_to_bottom(){
 }
 add_filter( 'wpseo_metabox_prio', 'yoast_to_bottom' );
 
-// add_action('admin_menu', 'print_admin_menu');
-// function print_admin_menu() {
-//     global $menu;
-//     print_r($menu);
-// }
-
 // Eliminate menu options
 function eliminate_admin_menus() {
 	if(!current_user_can( 'manage_options' )){
@@ -328,9 +322,9 @@ function custom_dashboard_widget_content() {
     echo '<h3>Welcome to Your Urban Umami Dashboard!</h3>';
     echo '<p>Here are some helpful resources to get you started:</p>';
     echo '<ul>
-            <li><a href="https://docs.google.com/document/d/1xqsGAOj_pnrERLrn4te-F1mukTWwyzwFTK2wXI8AXo4/edit?usp=sharing" target="_blank">How to add a Menu Item</a></li>
-			<li><a href="https://docs.google.com/document/d/11PaJLbtNQAfa_Bdep6CoUNf2eNiLqe0Qhw7WGQ9qdus/edit?usp=sharing" target="_blank">How to add a new user</a></li>
-			<li><a href="https://docs.google.com/document/d/1NFYLyWdopn1hhBgJ7dHqgzD2wY6SqGmlEeriRF2-G0U/edit?usp=sharing" target="_blank">How to confirm an order</a></li>
+            <li><a href="https://docs.google.com/document/d/1xqsGAOj_pnrERLrn4te-F1mukTWwyzwFTK2wXI8AXo4/edit?usp=sharing" target="_blank">How to Add a Menu Item</a></li>
+			<li><a href="https://docs.google.com/document/d/11PaJLbtNQAfa_Bdep6CoUNf2eNiLqe0Qhw7WGQ9qdus/edit?usp=sharing" target="_blank">How to Add a New User</a></li>
+			<li><a href="https://docs.google.com/document/d/1NFYLyWdopn1hhBgJ7dHqgzD2wY6SqGmlEeriRF2-G0U/edit?usp=sharing" target="_blank">How to Confirm an Order</a></li>
           </ul>';
 }
 

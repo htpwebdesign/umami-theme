@@ -48,8 +48,6 @@
 
 						li {
 
-							// @include column-width($i);
-
 							&:nth-child(#{$i}n) {
 								margin-right: 0;
 							}
@@ -107,7 +105,7 @@
                 }
 
                 .summary {
-                    border-bottom: 5px dashed #07505f;
+                    border-bottom: 5px dashed $color__background-dark;
                     padding-bottom: 1rem;
                     max-width: 500px;
 
@@ -120,7 +118,7 @@
                         .star-rating::before,
                         p.stars a:hover:after,
                         p.stars a:after {
-                            color: #FF943D !important;
+                            color: $color__background-button !important;
                         }
 
                         .woocommerce-review-link {
@@ -130,7 +128,7 @@
 
                     .price {
                         text-align: center;
-                        font-size: 20px;
+                        font-size: 1.25rem;
                         font-weight: 700;
                     }
 

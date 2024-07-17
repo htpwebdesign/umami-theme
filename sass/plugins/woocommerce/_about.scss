@@ -43,12 +43,10 @@
             align-items: center;
         }
     }
-
 }
 // regroup and then grid item to the children if too hard to group the samll items do acf repeater
 @include mixins.large{
     .page-id-128 .entry-content{
-      
         img {
             width: 500px;
             height: 150px; 
