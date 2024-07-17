@@ -23,11 +23,6 @@ $woocommerce__color-info: #3d9cd2;
 @import "plugins/woocommerce/products";
 
 /**
- * Single product
- */
-@import "plugins/woocommerce/single-product";
-
-/**
  * Checkout
  */
 @import "plugins/woocommerce/checkout";
@@ -37,7 +32,32 @@ $woocommerce__color-info: #3d9cd2;
  */
 @import "plugins/woocommerce/components";
 
+
 /**
  * WooCommerce widgets
  */
 @import "plugins/woocommerce/widgets";
+
+// our imports
+@import "plugins/woocommerce/404";
+@import "plugins/woocommerce/about";
+@import "plugins/woocommerce/back-to-top";
+@import "plugins/woocommerce/buttons";
+@import "plugins/woocommerce/cart";
+@import "plugins/woocommerce/contact";
+@import "plugins/woocommerce/giftCard";
+@import "plugins/woocommerce/header";
+@import "plugins/woocommerce/headings";
+@import "plugins/woocommerce/footer";
+@import "plugins/woocommerce/links";
+@import "plugins/woocommerce/media";
+@import "plugins/woocommerce/myaccount";
+@import "plugins/woocommerce/nav";
+@import "plugins/woocommerce/ramen";
+@import "plugins/woocommerce/reviews";
+@import "plugins/woocommerce/singleProduct";
+@import "plugins/woocommerce/siteWrapper";
+@import "plugins/woocommerce/store-note";
+@import "plugins/woocommerce/testimonial";
+@import "plugins/woocommerce/product-navigation";
+@import "plugins/woocommerce/yith";

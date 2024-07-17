@@ -45,3 +45,16 @@
         }
     }
 }
+
+//For Cart & Checkout page: to remove default list stylings
+ul#shipping_method,
+table.shop_table.woocommerce-table--order-details ul,
+ul.woocommerce-order-overview {
+    list-style: none;
+}
+
+ul#shipping_method,
+table.shop_table.woocommerce-table--order-details ul {
+	margin: 0;
+	padding: 0;
+}
