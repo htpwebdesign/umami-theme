@@ -1,3 +1,8 @@
-#billing-fields > div.wc-block-components-checkout-step__container > div > div.wc-block-components-address-address-wrapper.is-editing #billing .wc-block-components-address-form__address_2-toggle {
+#billing-fields > div.wc-block-components-checkout-step__container > div > div.wc-block-components-address-address-wrapper.is-editing #billing .wc-block-components-address-form__address_2-toggle,
+#shipping > button {
     background: $color__background-dark;
+
+    &:hover {
+        background: $color__background-button;
+    }
 }
