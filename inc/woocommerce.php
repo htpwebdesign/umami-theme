@@ -294,3 +294,28 @@ function custom_order_received_message($order_id) {
         echo '<h2>Thank you for your order! Your order will be ready for pickup in approximately 15 minutes. However, during peak hours it can take up to 45 minutes. We thank you for your patience.</h2>';
     }
 }
+
+// add a coupon using the smart coupon plugin that is only valid for 3 to 5 pm
+add_action('woocommerce_coupon_is_valid', 'validate_coupon_by_time_smart_coupons', 10, 2);
+
+function validate_coupon_by_time_smart_coupons($valid, $coupon) {
+    // Specify the coupon code to restrict
+    $restricted_coupon_code = 'HAPPYUMAMI';
+    
+    // Specify the time range (24-hour format)
+    $start_time = '15:00'; // 3:00 PM
+    $end_time = '17:00'; // 5:00 PM
+
+    // Get the current time
+    $current_time = current_time('H:i');
+
+    // Check if the coupon is the one we want to restrict
+    if ($coupon->get_code() === $restricted_coupon_code) {
+        // Check if the current time is within the specified range
+        if ($current_time < $start_time || $current_time > $end_time) {
+            return false; // Invalidate the coupon
+        }
+    }
+
+    return $valid;
+}
