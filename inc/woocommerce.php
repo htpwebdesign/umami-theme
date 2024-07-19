@@ -295,23 +295,23 @@ function custom_order_received_message($order_id) {
     }
 }
 
-// adds expiry time for happyumami coupon code for happy hour
-function time_range_coupon_id( $coupon_id ) {
-    // For specific coupon ID's only, several could be added, separated by a comma
-    $specific_coupons_ids = 'happyumami';
+// Adds expiry time for happyumami coupon code for happy hour
+function time_range_coupon_code( $coupon_code ) {
+    // For specific coupon codes only, several could be added, separated by a comma
+    $specific_coupons_codes = array('happyumami');
     
-    // Coupon ID in array, so check
-    if ( $coupon_id == $specific_coupons_ids ) {
+    // Coupon code in array, so check
+    if ( in_array( $coupon_code, $specific_coupons_codes ) ) {
         // Set the correct time zone (http://php.net/manual/en/timezones.php)
         date_default_timezone_set( 'America/Vancouver' );
 
         // Set the start time and the end time to be valid
-        $start_time = mktime( 15, 00, 00, date( 'm' ), date( 'd' ), date( 'y' ) );
-        $end_time   = mktime( 17, 00, 00, date( 'm' ), date( 'd' ), date( 'y' ) );
+        $start_time = mktime( 15, 00, 00, date( 'm' ), date( 'd' ), date( 'Y' ) );
+        $end_time   = mktime( 17, 00, 00, date( 'm' ), date( 'd' ), date( 'Y' ) );
         $time_now   = strtotime( 'now' );
         
         // Return true or false
-        return $start_time <= $time_now && $end_time >= $time_now ? true : false;
+        return $start_time <= $time_now && $end_time >= $time_now;
     }
     
     // Default
@@ -320,15 +320,15 @@ function time_range_coupon_id( $coupon_id ) {
 
 // Is valid
 function filter_woocommerce_coupon_is_valid( $valid, $coupon, $discount ) {
-    // Get coupon ID
-    $coupon_id = $coupon->get_id();
+    // Get coupon code
+    $coupon_code = $coupon->get_code();
     
     // Call function, return true or false
-    $valid = time_range_coupon_id( $coupon_id );
+    $valid = time_range_coupon_code( $coupon_code );
 
     // NOT valid
     if ( ! $valid ) {
-        throw new Exception( __( 'My error message', 'woocommerce' ), 109 );
+        throw new Exception( __( 'This coupon is only valid during Happy Hour (3 PM to 5 PM)', 'woocommerce' ), 109 );
     }
 
     return $valid;
