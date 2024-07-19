@@ -295,27 +295,42 @@ function custom_order_received_message($order_id) {
     }
 }
 
-// add a coupon using the smart coupon plugin that is only valid for 3 to 5 pm
-add_action('woocommerce_coupon_is_valid', 'validate_coupon_by_time_smart_coupons', 10, 2);
-
-function validate_coupon_by_time_smart_coupons($valid, $coupon) {
-    // Specify the coupon code to restrict
-    $restricted_coupon_code = 'HAPPYUMAMI';
+// adds expiry time for happyumami coupon code for happy hour
+function time_range_coupon_id( $coupon_id ) {
+    // For specific coupon ID's only, several could be added, separated by a comma
+    $specific_coupons_ids = 'happyumami';
     
-    // Specify the time range (24-hour format)
-    $start_time = '15:00'; // 3:00 PM
-    $end_time = '17:00'; // 5:00 PM
+    // Coupon ID in array, so check
+    if ( $coupon_id == $specific_coupons_ids ) {
+        // Set the correct time zone (http://php.net/manual/en/timezones.php)
+        date_default_timezone_set( 'America/Vancouver' );
 
-    // Get the current time
-    $current_time = current_time('H:i');
+        // Set the start time and the end time to be valid
+        $start_time = mktime( 15, 00, 00, date( 'm' ), date( 'd' ), date( 'y' ) );
+        $end_time   = mktime( 17, 00, 00, date( 'm' ), date( 'd' ), date( 'y' ) );
+        $time_now   = strtotime( 'now' );
+        
+        // Return true or false
+        return $start_time <= $time_now && $end_time >= $time_now ? true : false;
+    }
+    
+    // Default
+    return true;
+}
 
-    // Check if the coupon is the one we want to restrict
-    if ($coupon->get_code() === $restricted_coupon_code) {
-        // Check if the current time is within the specified range
-        if ($current_time < $start_time || $current_time > $end_time) {
-            return false; // Invalidate the coupon
-        }
+// Is valid
+function filter_woocommerce_coupon_is_valid( $valid, $coupon, $discount ) {
+    // Get coupon ID
+    $coupon_id = $coupon->get_id();
+    
+    // Call function, return true or false
+    $valid = time_range_coupon_id( $coupon_id );
+
+    // NOT valid
+    if ( ! $valid ) {
+        throw new Exception( __( 'My error message', 'woocommerce' ), 109 );
     }
 
     return $valid;
 }
+add_filter( 'woocommerce_coupon_is_valid', 'filter_woocommerce_coupon_is_valid', 10, 3 );
